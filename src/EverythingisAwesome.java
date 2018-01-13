@@ -1,5 +1,3 @@
-package level0alfredo;
-
 import javax.swing.JOptionPane;
 
 public class EverythingisAwesome {

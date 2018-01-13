@@ -1,10 +1,8 @@
-package level0alfredo;
-
 import javax.swing.JOptionPane;
 
 public class KnockKnock {
 	public static void main(String[] args) {
-		JOptionPane.showInputDialog(null, "Knock knock");
+		JOptionPane.showInputDialog(null, "Knock knock poala");
 		JOptionPane.showInputDialog(null, "Merry");
 		JOptionPane.showMessageDialog(null, "Merry Christmas");
 
