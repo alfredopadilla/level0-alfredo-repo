@@ -1,14 +1,15 @@
 
+
 public class Badgers {
 
 	public static void main(String[] args) {
-		String part1 ="Badger,qq ";
+		String part1 ="Badger, ";
 		for (int i = 1; i < 11; i++) {
 			System.out.print(part1);
 		}
 		System.out.println();
-		String part2 ="Mushroom,mushroom ";
-		for (int i = 1; i < 3; i++) {
+		String part2 ="Mushroom,mushroom,a ";
+		for (int i = 1; i < 2; i++) {
 			System.out.print(part2);
 		}
 		System.out.println();
@@ -24,7 +25,7 @@ public class Badgers {
 			System.out.print(part1);
 		}
 		System.out.println();
-		String part3 ="Mush-mushroom";
+		String part3 ="Mush-mushroom,a";
 		for (int h = 1; h < 2; h++) {
 			System.out.print(part3);
 		}
@@ -51,7 +52,7 @@ public class Badgers {
 			System.out.print(part1);
 		}
 		System.out.println();
-		for (int q = 1; q < 3; q++) {
+		for (int q = 1; q < 2; q++) {
 			System.out.print(part2);
 		}
 		System.out.println();
