@@ -5,6 +5,10 @@ void setup() {
 
   background(0, 0, 40); 
   size(800, 800);
+  PImage img;
+  img = loadImage("stars.jpeg");
+  img.resize(800, 800);
+  background(img);
 }
 
 void draw() {
@@ -18,7 +22,4 @@ void draw() {
   fill(100, 100, 100);
   triangle(x, y + 10, x + 50, y + 100, x - 50, y + 100);
   ellipse(50, 80, 300, 300);
-  
-
-
 }
