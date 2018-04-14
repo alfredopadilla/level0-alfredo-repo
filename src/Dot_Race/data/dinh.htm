@@ -1,0 +1,2287 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!-- saved from url=(0036)https://freesound.org/search/?q=ding -->
+<html xmlns:fb="http://www.facebook.com/2008/fbml" xmlns:og="http://ogp.me/ns#" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        
+        
+        <meta name="description" content="Freesound: collaborative database of creative-commons licensed sound for musicians and sound lovers. Have you freed your sound today?">
+        <meta name="keywords" content="free, sound">
+        <link rel="stylesheet" type="text/css" href="./dinh_files/all.css">
+        <!--[if IE 6]><link rel="stylesheet" type="text/css" href="/media/css/ie6.css?v=1404" /><![endif]-->
+        <link rel="icon" href="https://freesound.org/favicon.ico">
+        <title>Freesound - sound search</title>
+        <script type="text/javascript" async="" src="./dinh_files/ga.js"></script><script src="./dinh_files/jquery-1.5.2.min.js" type="text/javascript"></script>
+        <script src="./dinh_files/jquery-ui-1.8.11.custom.min.js" type="text/javascript"></script>
+        <script src="./dinh_files/jquery.cookie.js" type="text/javascript"></script>
+        <script src="./dinh_files/swfobject.js" type="text/javascript"></script>
+        <script src="./dinh_files/jquery.watermarkinput.js" type="text/javascript"></script>
+        <script type="text/javascript">
+            var isLoggedIn = false;
+            var loginUrl = "/home/login/?next=/search/";
+            $(document).ready(function() {
+                 $("#search input[name=q]").Watermark("search sounds");
+            });
+            function clearWatermark(){
+			   $.Watermark.HideAll()
+			   return true
+			}
+        </script>
+        <script src="./dinh_files/freesound.js" type="text/javascript"></script>
+        <script src="./dinh_files/maps.js" type="text/javascript"></script>
+
+    	<script src="./dinh_files/ajax_utils.js" type="text/javascript"></script>
+        <!-- next couple of lines are used for the HTML player -->
+        <link href="./dinh_files/css" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" type="text/css" href="./dinh_files/player.css">
+        <script src="./dinh_files/soundmanager2.js"></script>
+        <script type="text/javascript" src="./dinh_files/player.js"></script>
+        <script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-86270-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+        
+    </head>
+
+    <body id="" onload="" onunload="">
+
+        
+
+
+        <div id="header">
+            <div id="account_nav">
+                
+                    <a href="https://freesound.org/home/register/">Register</a>
+                    <a href="https://freesound.org/home/login/?next=/search/">Log In</a>
+                
+            <a href="https://freesound.org/home/upload/" id="upload_button"></a>
+        </div>
+
+        <a href="https://freesound.org/" id="logo"></a>
+
+        <div id="search">
+        <form method="get" onsubmit="return clearWatermark()" action="https://freesound.org/search/">
+            <fieldset>
+               <input type="text" name="q" value="" size="30" style="color: rgb(170, 170, 170);">
+               <input type="submit" value="" id="search_submit">
+            </fieldset>
+        </form>
+        </div>
+
+        <ul id="site_nav">
+            
+            <li class="active_tab"><a href="https://freesound.org/browse/" id="site_nav_sounds"><span class="site_nav_icon"></span>Sounds</a></li>
+            <li class=""><a href="https://freesound.org/forum/" id="site_nav_forums"><span class="site_nav_icon"></span>Forums</a></li>
+            <li class=""><a href="https://freesound.org/people/" id="site_nav_people"><span class="site_nav_icon"></span>People</a></li>
+            <li class=""><a href="https://freesound.org/help/faq/" id="site_nav_help"><span class="site_nav_icon"></span>Help</a></li>
+
+        </ul>
+    </div>
+
+        <div id="wrapper">
+        <div id="container">
+
+        
+
+        
+<div id="content_full"> <!-- START of Content area -->
+
+
+<form id="search_form" method="get" onsubmit="return addAdvancedSearchOptionsFilters()" action="https://freesound.org/search/">
+    <fieldset>
+
+       <input id="query_input" type="text" name="q" value="ding" size="30">
+       <input id="filter_query" type="hidden" name="f" value="" size="30">
+       
+       <select name="s">
+            
+            <option value="score desc" selected="selected">Automatic by relevance</option>
+            
+            <option value="duration desc">Duration (long first)</option>
+            
+            <option value="duration asc">Duration (short first)</option>
+            
+            <option value="created desc">Date added (newest first)</option>
+            
+            <option value="created asc">Date added (oldest first)</option>
+            
+            <option value="num_downloads desc">Downloads (most first)</option>
+            
+            <option value="num_downloads asc">Downloads (least first)</option>
+            
+            <option value="avg_rating desc">Rating (highest first)</option>
+            
+            <option value="avg_rating asc">Rating (lowest first)</option>
+            
+       </select>
+
+       <input type="submit" value="search" id="search_submit">
+
+       <script type="text/javascript">
+
+    function showAdvancedSearchOptions()
+    {
+        $("#advanced_search_hidden").val(1);
+        $("#enableShowButton").hide();
+        $("#advanced_search_options").show('blind', {}, 500, function() {});
+
+    }
+
+    function hideAdvancedSearchOptions()
+    {
+        $("#advanced_search_hidden").val(0);
+        $("#advanced_search_options").hide('blind', {}, 500, function() {});
+        $("#enableShowButton").show();
+    }
+
+    function set_hidden_grouping_value(){
+        if ($("#grouping_geotagged").is(':checked')){
+            $("#grouping_geotagged_hidden").val("1")
+        }else{
+            $("#grouping_geotagged_hidden").val("")
+        }
+    }
+
+</script>
+
+
+<div id="advanced_search_options" class="advanced_search_options" style="display:none">
+<input id="advanced_search_hidden" type="hidden" name="advanced" value="0">
+
+<div style="margin-top:8px;"></div>Search in:&nbsp;
+<input type="checkbox" name="a_tag" value="1"> Tags&nbsp;&nbsp;
+<input type="checkbox" name="a_filename" value="1"> File names&nbsp;&nbsp;
+<input type="checkbox" name="a_description" value="1"> Descriptions&nbsp;&nbsp;
+<input type="checkbox" name="a_packname" value="1"> Pack names&nbsp;&nbsp;
+<input type="checkbox" name="a_soundid" value="1"> Sound Ids&nbsp;&nbsp;
+<input type="checkbox" name="a_username" value="1"> User names
+<span class="advanced_search_indication">(if none is selected, all will be used)</span>
+<br>
+
+Duration between <input class="inputtext" id="filter_duration_min" value="0" size="6"> (min)
+and <input class="inputtext" id="filter_duration_max" value="*" size="6"> (max) seconds<br>
+<input id="filter_is_geotagged" type="checkbox" value="1"> Only geotagged sounds<br>
+<input id="grouping_geotagged" type="checkbox" onchange="set_hidden_grouping_value()" checked=""> Group sounds by pack
+<input id="grouping_geotagged_hidden" type="hidden" name="g" value="1">
+
+<br>
+<span class="advanced_search_options_button"><a style="cursor:pointer;" onclick="hideAdvancedSearchOptions();">Hide advanced search options</a></span>
+</div>
+
+<span id="enableShowButton" class="advanced_search_options_button">
+    <div style="margin-top:4px;"></div>
+    <a style="cursor:pointer;" onclick="showAdvancedSearchOptions();">Show advanced search options</a>
+</span>
+
+
+        <br>
+
+    </fieldset>
+</form>
+
+
+<p id="filter_query_display">
+
+
+
+</p>
+
+<script type="text/javascript">
+
+    $(document).ready(function(){
+
+        // Fill advanced search fields that were passen on the f parameter
+        // Duration
+
+        if (getFilterValue("duration","min") == "")
+            $("#filter_duration_min").val("0");
+        else
+            $("#filter_duration_min").val(getFilterValue("duration","min"));
+
+        if (getFilterValue("duration","max") == "")
+            $("#filter_duration_max").val("*");
+        else
+            $("#filter_duration_max").val(getFilterValue("duration","max"));
+
+        // Geotagged
+        if (getFilterValue("is_geotagged")==1)
+               $("#filter_is_geotagged").attr('checked','checked')
+
+        // Extract terms from the query search box and highlight any of their occurrences in the descriptions
+        terms = document.getElementById("query_input").value.split(" ");
+
+        for(var i=0;i<terms.length;i++)
+        {
+        	term = terms[i];
+        	re = RegExp(term,"i"); // i for case-insensative
+
+        	descriptions = document.getElementsByClassName("description");
+        	for (var j=0;j<descriptions.length;j++)
+        	{
+        		descriptions[j].innerHTML = descriptions[j].innerHTML.replace(re,"<b>"+term+"</b>");
+        	}
+        }
+
+    });
+
+    function addAdvancedSearchOptionsFilters()
+    {
+
+        // Remove existing previously existing advanced options filters (will be replaced by current ones)
+        existing_duration_filter = "duration:[" + getFilterValue("duration","min") + " TO " + getFilterValue("duration","max") + "]"
+        removeFilter(existing_duration_filter)
+        removeFilter("is_geotagged:1")
+
+        // if advanced options is activated add all updated filters
+        if ($("#advanced_search_hidden").val() == 1)
+        {
+
+            // Create and add new filter with all the advanced options
+            filter = ""
+
+            // Duration filter
+            duration_min = parseFloat($("#filter_duration_min").val())
+            duration_max = parseFloat($("#filter_duration_max").val())
+
+            if ((duration_min >= 0.0) || (duration_max >= 0.0))
+            {
+                duration_filter = ""
+
+                if ((duration_min >= 0.0) && (duration_max >= 0.0)) // Both min and max have been set
+                {
+                    if (duration_max < duration_min)
+                    {
+                        // interchange values if duration_min > duration_max
+                        duration_aux = duration_min
+                        duration_min = duration_max
+                        duration_max = duration_aux
+                    }
+
+                    duration_filter = "duration:[" + duration_min + " TO " + duration_max + "]"
+
+                }
+                else if (duration_min >= 0.0) // Only minimum has been set
+                {
+                    duration_filter = "duration:[" + duration_min + " TO *]"
+                }
+                else if (duration_max >= 0.0) // Only maximum has been set
+                {
+                    duration_filter = "duration:[* TO " + duration_max + "]"
+                }
+
+                filter = filter + duration_filter
+            }
+
+            // Is geotagged filter
+            if ($("#filter_is_geotagged").attr('checked')){
+                if (filter != "")
+                    filter = filter + " "
+                filter = filter + "is_geotagged:1"
+            }
+
+               // Update general filter with the advanced options filter
+            value = $("#filter_query").val();
+            if (value != "")
+                $("#filter_query").val(value + " " + filter);
+            else
+                $("#filter_query").val(filter);
+
+        }
+
+        return true
+    }
+
+    // Return the value of a filter given its name
+    // If filter has a range, optional "range" parameter must be set to "min or "max"
+    function getFilterValue(name, range)
+    {
+        if (!range) { range = "min"};
+
+        var value = $("#filter_query").val();
+        position_name = value.search(name)
+        position_value = value.search(name) + (name + ":").length
+        if (value.search((name + ":")) != -1)
+        {
+            if (value[position_value] == "[") // Is range (with spaces)
+            {
+                aux_value = value.substring(position_value + 1)
+                position_end = position_value + aux_value.search("]") + 2
+
+                range_string = value.substring(position_value + 1, position_end -1) // Without [ ]
+                parts = range_string.split(" ")
+                if (range == "min")
+                    return parts[0]
+                else if (range == "max")
+                    return parts[2]
+            }
+            else if (value[position_value] == "\"") // Is string (with spaces)
+            {
+                aux_value = value.substring(position_value + 1)
+                position_end = position_value + aux_value.search("\"") + 2
+                return value.substring(position_value, position_end)
+
+            }
+            else // Is number or normal text (without spaces)
+            {
+                aux_value = value.substring(position_value + 1)
+                if (aux_value.search(" ") != -1)
+                    position_end = position_value + aux_value.search(" ") + 1
+                else
+                    position_end = value.length
+
+                return value.substring(position_value, position_end)
+            }
+        }
+        else
+        {
+            return ""
+        }
+    }
+
+    // Remove a filter given the full tag ex: type:aiff, pack:"pack name"
+    function removeFilter(tag)
+    {
+        var value = $("#filter_query").val();
+        var cleaned = $.trim(value.replace(tag + " ", "").replace(tag, ""));
+        $("#filter_query").val(cleaned);
+    }
+
+</script>
+
+
+    
+    <div id="sidebar" style="float:right">
+        
+            <h3>licenses</h3>
+            
+ <ul>
+     <li class="facet_item"><a href="https://freesound.org/search/?g=1&amp;q=ding&amp;f=%20license:%22Attribution%22">Attribution</a> (411)</li><li class="facet_item"><a href="https://freesound.org/search/?g=1&amp;q=ding&amp;f=%20license:%22Attribution+Noncommercial%22">Attribution Noncommercial</a> (218)</li><li class="facet_item"><a href="https://freesound.org/search/?g=1&amp;q=ding&amp;f=%20license:%22Creative+Commons+0%22">Creative Commons 0</a> (620)</li><li class="facet_item"><a href="https://freesound.org/search/?g=1&amp;q=ding&amp;f=%20license:%22Sampling%2B%22">Sampling+</a> (29)</li>
+</ul>
+
+
+
+        
+
+        
+            <h3>tags</h3>
+            
+
+<p class="search-tagcloud">
+    <span class="facet_item" style="font-size:1.95185185185em"><a href="https://freesound.org/search/?g=1&amp;q=ding&amp;f=%20tag:%22bell%22">bell</a></span> <span class="facet_item" style="font-size:0.988888888889em"><a href="https://freesound.org/search/?g=1&amp;q=ding&amp;f=%20tag:%22bells%22">bells</a></span> <span class="facet_item" style="font-size:1.22962962963em"><a href="https://freesound.org/search/?g=1&amp;q=ding&amp;f=%20tag:%22bowl%22">bowl</a></span> <span class="facet_item" style="font-size:1.56666666667em"><a href="https://freesound.org/search/?g=1&amp;q=ding&amp;f=%20tag:%22chime%22">chime</a></span> <span class="facet_item" style="font-size:1.61481481481em"><a href="https://freesound.org/search/?g=1&amp;q=ding&amp;f=%20tag:%22clang%22">clang</a></span> <span class="facet_item" style="font-size:1.03703703704em"><a href="https://freesound.org/search/?g=1&amp;q=ding&amp;f=%20tag:%22clanging%22">clanging</a></span> <span class="facet_item" style="font-size:1.13333333333em"><a href="https://freesound.org/search/?g=1&amp;q=ding&amp;f=%20tag:%22clank%22">clank</a></span> <span class="facet_item" style="font-size:0.7em"><a href="https://freesound.org/search/?g=1&amp;q=ding&amp;f=%20tag:%22clash%22">clash</a></span> <span class="facet_item" style="font-size:2.0em"><a href="https://freesound.org/search/?g=1&amp;q=ding&amp;f=%20tag:%22ding%22">ding</a></span> <span class="facet_item" style="font-size:1.37407407407em"><a href="https://freesound.org/search/?g=1&amp;q=ding&amp;f=%20tag:%22dong%22">dong</a></span> <span class="facet_item" style="font-size:0.844444444444em"><a href="https://freesound.org/search/?g=1&amp;q=ding&amp;f=%20tag:%22field-recording%22">field-recording</a></span> <span class="facet_item" style="font-size:1.47037037037em"><a href="https://freesound.org/search/?g=1&amp;q=ding&amp;f=%20tag:%22glass%22">glass</a></span> <span class="facet_item" style="font-size:1.75925925926em"><a href="https://freesound.org/search/?g=1&amp;q=ding&amp;f=%20tag:%22hit%22">hit</a></span> <span class="facet_item" style="font-size:1.27777777778em"><a href="https://freesound.org/search/?g=1&amp;q=ding&amp;f=%20tag:%22impact%22">impact</a></span> <span class="facet_item" style="font-size:0.796296296296em"><a href="https://freesound.org/search/?g=1&amp;q=ding&amp;f=%20tag:%22knife%22">knife</a></span> <span class="facet_item" style="font-size:1.85555555556em"><a href="https://freesound.org/search/?g=1&amp;q=ding&amp;f=%20tag:%22metal%22">metal</a></span> <span class="facet_item" style="font-size:1.66296296296em"><a href="https://freesound.org/search/?g=1&amp;q=ding&amp;f=%20tag:%22metallic%22">metallic</a></span> <span class="facet_item" style="font-size:1.42222222222em"><a href="https://freesound.org/search/?g=1&amp;q=ding&amp;f=%20tag:%22percussion%22">percussion</a></span> <span class="facet_item" style="font-size:1.80740740741em"><a href="https://freesound.org/search/?g=1&amp;q=ding&amp;f=%20tag:%22ping%22">ping</a></span> <span class="facet_item" style="font-size:1.9037037037em"><a href="https://freesound.org/search/?g=1&amp;q=ding&amp;f=%20tag:%22ring%22">ring</a></span> <span class="facet_item" style="font-size:1.51851851852em"><a href="https://freesound.org/search/?g=1&amp;q=ding&amp;f=%20tag:%22ringing%22">ringing</a></span> <span class="facet_item" style="font-size:0.7em"><a href="https://freesound.org/search/?g=1&amp;q=ding&amp;f=%20tag:%22slash%22">slash</a></span> <span class="facet_item" style="font-size:0.892592592593em"><a href="https://freesound.org/search/?g=1&amp;q=ding&amp;f=%20tag:%22sound%22">sound</a></span> <span class="facet_item" style="font-size:1.18148148148em"><a href="https://freesound.org/search/?g=1&amp;q=ding&amp;f=%20tag:%22steel%22">steel</a></span> <span class="facet_item" style="font-size:1.32592592593em"><a href="https://freesound.org/search/?g=1&amp;q=ding&amp;f=%20tag:%22strike%22">strike</a></span> <span class="facet_item" style="font-size:0.796296296296em"><a href="https://freesound.org/search/?g=1&amp;q=ding&amp;f=%20tag:%22struck%22">struck</a></span> <span class="facet_item" style="font-size:0.940740740741em"><a href="https://freesound.org/search/?g=1&amp;q=ding&amp;f=%20tag:%22sword%22">sword</a></span> <span class="facet_item" style="font-size:0.748148148148em"><a href="https://freesound.org/search/?g=1&amp;q=ding&amp;f=%20tag:%22synthesizer%22">synthesizer</a></span> <span class="facet_item" style="font-size:1.08518518519em"><a href="https://freesound.org/search/?g=1&amp;q=ding&amp;f=%20tag:%22tap%22">tap</a></span> <span class="facet_item" style="font-size:1.71111111111em"><a href="https://freesound.org/search/?g=1&amp;q=ding&amp;f=%20tag:%22ting%22">ting</a></span> 
+</p>
+
+
+        
+
+        
+            <h3>type</h3>
+            
+ <ul>
+     <li class="facet_item"><a href="https://freesound.org/search/?g=1&amp;q=ding&amp;f=%20type:%22aiff%22">aiff</a> (112)</li><li class="facet_item"><a href="https://freesound.org/search/?g=1&amp;q=ding&amp;f=%20type:%22flac%22">flac</a> (65)</li><li class="facet_item"><a href="https://freesound.org/search/?g=1&amp;q=ding&amp;f=%20type:%22mp3%22">mp3</a> (181)</li><li class="facet_item"><a href="https://freesound.org/search/?g=1&amp;q=ding&amp;f=%20type:%22ogg%22">ogg</a> (4)</li><li class="facet_item"><a href="https://freesound.org/search/?g=1&amp;q=ding&amp;f=%20type:%22wav%22">wav</a> (916)</li>
+</ul>
+
+
+
+        
+
+        
+            <h3>samplerate</h3>
+            
+ <ul>
+     <li class="facet_item"><a href="https://freesound.org/search/?g=1&amp;q=ding&amp;f=%20samplerate:%2216000%22">16000</a> (8)</li><li class="facet_item"><a href="https://freesound.org/search/?g=1&amp;q=ding&amp;f=%20samplerate:%2222050%22">22050</a> (5)</li><li class="facet_item"><a href="https://freesound.org/search/?g=1&amp;q=ding&amp;f=%20samplerate:%2244100%22">44100</a> (894)</li><li class="facet_item"><a href="https://freesound.org/search/?g=1&amp;q=ding&amp;f=%20samplerate:%2248000%22">48000</a> (296)</li><li class="facet_item"><a href="https://freesound.org/search/?g=1&amp;q=ding&amp;f=%20samplerate:%2296000%22">96000</a> (65)</li>
+</ul>
+
+
+
+        
+
+        
+            <h3>bitdepth</h3>
+            
+ <ul>
+     <li class="facet_item"><a href="https://freesound.org/search/?g=1&amp;q=ding&amp;f=%20bitdepth:%2216%22">16</a> (730)</li><li class="facet_item"><a href="https://freesound.org/search/?g=1&amp;q=ding&amp;f=%20bitdepth:%2224%22">24</a> (307)</li><li class="facet_item"><a href="https://freesound.org/search/?g=1&amp;q=ding&amp;f=%20bitdepth:%2232%22">32</a> (56)</li><li class="facet_item"><a href="https://freesound.org/search/?g=1&amp;q=ding&amp;f=%20bitdepth:%228%22">8</a> (1)</li>
+</ul>
+
+
+
+        
+
+        
+            <h3>bitrate</h3>
+            
+ <ul>
+     <li class="facet_item"><a href="https://freesound.org/search/?g=1&amp;q=ding&amp;f=%20bitrate:%221378%22">1378</a> (301)</li><li class="facet_item"><a href="https://freesound.org/search/?g=1&amp;q=ding&amp;f=%20bitrate:%221411%22">1411</a> (122)</li><li class="facet_item"><a href="https://freesound.org/search/?g=1&amp;q=ding&amp;f=%20bitrate:%221500%22">1500</a> (47)</li><li class="facet_item"><a href="https://freesound.org/search/?g=1&amp;q=ding&amp;f=%20bitrate:%222250%22">2250</a> (45)</li><li class="facet_item"><a href="https://freesound.org/search/?g=1&amp;q=ding&amp;f=%20bitrate:%22689%22">689</a> (145)</li>
+</ul>
+
+
+
+        
+
+
+        
+            <h3>channels</h3>
+            
+ <ul>
+     <li class="facet_item"><a href="https://freesound.org/search/?g=1&amp;q=ding&amp;f=%20channels:%221%22">1</a> (421)</li><li class="facet_item"><a href="https://freesound.org/search/?g=1&amp;q=ding&amp;f=%20channels:%222%22">2</a> (855)</li><li class="facet_item"><a href="https://freesound.org/search/?g=1&amp;q=ding&amp;f=%20channels:%226%22">6</a> (2)</li>
+</ul>
+
+
+
+        
+
+        
+            <h3>packs</h3>
+            
+ <ul>
+     <li class="facet_item"><a href="https://freesound.org/search/?g=1&amp;q=ding&amp;f=%20grouping_pack:%2211394_Game+and+Media+DINGS%22">Game and Media DINGS</a> (22)</li><li class="facet_item"><a href="https://freesound.org/search/?g=1&amp;q=ding&amp;f=%20grouping_pack:%2214897_high-pitched+glass+bowl%22">high-pitched glass bowl</a> (30)</li><li class="facet_item"><a href="https://freesound.org/search/?g=1&amp;q=ding&amp;f=%20grouping_pack:%2214905_medium-pitched+glass+bowl%22">medium-pitched glass bowl</a> (31)</li><li class="facet_item"><a href="https://freesound.org/search/?g=1&amp;q=ding&amp;f=%20grouping_pack:%2214906_low-pitched+glass+bowl%22">low-pitched glass bowl</a> (37)</li><li class="facet_item"><a href="https://freesound.org/search/?g=1&amp;q=ding&amp;f=%20grouping_pack:%2217218_Akai+AX80+-+Ring+Ding%22">Akai AX80 - Ring Ding</a> (61)</li><li class="facet_item"><a href="https://freesound.org/search/?g=1&amp;q=ding&amp;f=%20grouping_pack:%2218347_Sword+Clashes+Pack%22">Sword Clashes Pack</a> (62)</li><li class="facet_item"><a href="https://freesound.org/search/?g=1&amp;q=ding&amp;f=%20grouping_pack:%2220321_metal+bottle%22">metal bottle</a> (35)</li><li class="facet_item"><a href="https://freesound.org/search/?g=1&amp;q=ding&amp;f=%20grouping_pack:%2221548_bicycle+bells%22">bicycle bells</a> (19)</li><li class="facet_item"><a href="https://freesound.org/search/?g=1&amp;q=ding&amp;f=%20grouping_pack:%224023_Bells+%2F+Gongs%22">Bells / Gongs</a> (29)</li><li class="facet_item"><a href="https://freesound.org/search/?g=1&amp;q=ding&amp;f=%20grouping_pack:%22748_Ding+hits%22">Ding hits</a> (24)</li>
+</ul>
+
+
+
+        
+
+        
+            <h3>users</h3>
+            
+
+<p class="search-tagcloud">
+    <span class="facet_item" style="font-size:1.00588235294em"><a href="https://freesound.org/search/?g=1&amp;q=ding&amp;f=%20username:%22acclivity%22">acclivity</a></span> <span class="facet_item" style="font-size:1.08235294118em"><a href="https://freesound.org/search/?g=1&amp;q=ding&amp;f=%20username:%22adam_n%22">adam_n</a></span> <span class="facet_item" style="font-size:1.54117647059em"><a href="https://freesound.org/search/?g=1&amp;q=ding&amp;f=%20username:%22adcbicycle%22">adcbicycle</a></span> <span class="facet_item" style="font-size:0.776470588235em"><a href="https://freesound.org/search/?g=1&amp;q=ding&amp;f=%20username:%22arnaud+coutancier%22">arnaud coutancier</a></span> <span class="facet_item" style="font-size:0.776470588235em"><a href="https://freesound.org/search/?g=1&amp;q=ding&amp;f=%20username:%22arseniiv%22">arseniiv</a></span> <span class="facet_item" style="font-size:2.0em"><a href="https://freesound.org/search/?g=1&amp;q=ding&amp;f=%20username:%22ascap%22">ascap</a></span> <span class="facet_item" style="font-size:1.61764705882em"><a href="https://freesound.org/search/?g=1&amp;q=ding&amp;f=%20username:%22benboncan%22">benboncan</a></span> <span class="facet_item" style="font-size:1.38823529412em"><a href="https://freesound.org/search/?g=1&amp;q=ding&amp;f=%20username:%22cgeffex%22">cgeffex</a></span> <span class="facet_item" style="font-size:0.929411764706em"><a href="https://freesound.org/search/?g=1&amp;q=ding&amp;f=%20username:%22connersaw8%22">connersaw8</a></span> <span class="facet_item" style="font-size:1.31176470588em"><a href="https://freesound.org/search/?g=1&amp;q=ding&amp;f=%20username:%22crashoverride61088%22">crashoverride61088</a></span> <span class="facet_item" style="font-size:0.776470588235em"><a href="https://freesound.org/search/?g=1&amp;q=ding&amp;f=%20username:%22dobroide%22">dobroide</a></span> <span class="facet_item" style="font-size:0.7em"><a href="https://freesound.org/search/?g=1&amp;q=ding&amp;f=%20username:%22gkillhour%22">gkillhour</a></span> <span class="facet_item" style="font-size:0.929411764706em"><a href="https://freesound.org/search/?g=1&amp;q=ding&amp;f=%20username:%22iowaspacewizard%22">iowaspacewizard</a></span> <span class="facet_item" style="font-size:1.92352941176em"><a href="https://freesound.org/search/?g=1&amp;q=ding&amp;f=%20username:%22johnbuhr%22">johnbuhr</a></span> <span class="facet_item" style="font-size:0.929411764706em"><a href="https://freesound.org/search/?g=1&amp;q=ding&amp;f=%20username:%22kibibu%22">kibibu</a></span> <span class="facet_item" style="font-size:1.69411764706em"><a href="https://freesound.org/search/?g=1&amp;q=ding&amp;f=%20username:%22kwahmah_02%22">kwahmah_02</a></span> <span class="facet_item" style="font-size:1.31176470588em"><a href="https://freesound.org/search/?g=1&amp;q=ding&amp;f=%20username:%22kyster%22">kyster</a></span> <span class="facet_item" style="font-size:1.84705882353em"><a href="https://freesound.org/search/?g=1&amp;q=ding&amp;f=%20username:%22modularsamples%22">modularsamples</a></span> <span class="facet_item" style="font-size:1.77058823529em"><a href="https://freesound.org/search/?g=1&amp;q=ding&amp;f=%20username:%22newagesoup%22">newagesoup</a></span> <span class="facet_item" style="font-size:0.852941176471em"><a href="https://freesound.org/search/?g=1&amp;q=ding&amp;f=%20username:%22nicola_ariutti%22">nicola_ariutti</a></span> <span class="facet_item" style="font-size:0.852941176471em"><a href="https://freesound.org/search/?g=1&amp;q=ding&amp;f=%20username:%22nicstage%22">nicstage</a></span> <span class="facet_item" style="font-size:1.23529411765em"><a href="https://freesound.org/search/?g=1&amp;q=ding&amp;f=%20username:%22noisecollector%22">noisecollector</a></span> <span class="facet_item" style="font-size:0.776470588235em"><a href="https://freesound.org/search/?g=1&amp;q=ding&amp;f=%20username:%22omar+alvarado%22">omar alvarado</a></span> <span class="facet_item" style="font-size:0.929411764706em"><a href="https://freesound.org/search/?g=1&amp;q=ding&amp;f=%20username:%22prodepha%22">prodepha</a></span> <span class="facet_item" style="font-size:1.00588235294em"><a href="https://freesound.org/search/?g=1&amp;q=ding&amp;f=%20username:%22qubodup%22">qubodup</a></span> <span class="facet_item" style="font-size:1.61764705882em"><a href="https://freesound.org/search/?g=1&amp;q=ding&amp;f=%20username:%22robinhood76%22">robinhood76</a></span> <span class="facet_item" style="font-size:1.31176470588em"><a href="https://freesound.org/search/?g=1&amp;q=ding&amp;f=%20username:%22soundbytez%22">soundbytez</a></span> <span class="facet_item" style="font-size:0.7em"><a href="https://freesound.org/search/?g=1&amp;q=ding&amp;f=%20username:%22suzenako%22">suzenako</a></span> <span class="facet_item" style="font-size:1.46470588235em"><a href="https://freesound.org/search/?g=1&amp;q=ding&amp;f=%20username:%22tec+studios%22">tec studios</a></span> <span class="facet_item" style="font-size:1.15882352941em"><a href="https://freesound.org/search/?g=1&amp;q=ding&amp;f=%20username:%22timbre%22">timbre</a></span> 
+</p>
+
+
+        
+
+    </div>
+
+        
+            <div class="search_paginator">
+                <ul class="pagination"><li class="disabled-previous-next">previous</li><li class="next-page"><a href="https://freesound.org/search/?q=ding&amp;page=2#sound" title="Next Page">next</a></li><li class="current-page">1</li><li class="other-page"><a href="https://freesound.org/search/?q=ding&amp;page=2#sound" title="Page 2">2</a></li><li class="other-page"><a href="https://freesound.org/search/?q=ding&amp;page=3#sound" title="Page 3">3</a></li><li class="other-page"><a href="https://freesound.org/search/?q=ding&amp;page=4#sound" title="Page 4">4</a></li><li class="other-page"><a href="https://freesound.org/search/?q=ding&amp;page=5#sound" title="Page 5">5</a></li><li class="other-page"><a href="https://freesound.org/search/?q=ding&amp;page=6#sound" title="Page 6">6</a></li><li class="other-page"><a href="https://freesound.org/search/?q=ding&amp;page=7#sound" title="Page 7">7</a></li><li class="dots">...</li><li class="last-page"><a href="https://freesound.org/search/?q=ding&amp;page=38#sound" title="Last Page">38</a></li><p class="number_of_results">
+            
+                &nbsp;|&nbsp; 1278 sounds
+            
+        </p></ul>
+
+
+            </div>
+
+            
+                
+
+
+
+
+
+
+
+<div class="sample_player_small" id="402521">
+
+    
+
+    <div class="sample_player ">
+        <div class="small_player">
+            <div class="player small">
+    <div class="metadata">
+        <a class="mp3_file" href="https://freesound.org/data/previews/402/402521_5121236-lq.mp3" title="mp3 file">Sleigh Bells, Long, A.wav - mp3 version</a>
+<a class="ogg_file" href="https://freesound.org/data/previews/402/402521_5121236-lq.ogg" title="ogg file">Sleigh Bells, Long, A.wav - ogg version</a>
+<a class="waveform" href="https://freesound.org/data/displays/402/402521_5121236_wave_M.png" title="waveform file">Sleigh Bells, Long, A.wav - waveform</a>
+<a class="spectrum" href="https://freesound.org/data/displays/402/402521_5121236_spec_M.jpg" title="spectrogram file">Sleigh Bells, Long, A.wav - spectrogram</a>
+<span class="duration" title="duration in seconds">25298.1</span>
+
+    </div>
+<div class="controls">                     <a href="javascript:void(0)" title="play / pause" class="toggle play">play / pause</a>                     <a href="javascript:void(0)" title="loop" class="toggle loop">loop</a>                 </div>                 <div class="background" style="background-image: url(&quot;/data/displays/402/402521_5121236_wave_M.png&quot;); background-size: contain; background-repeat: no-repeat;"></div>                 <div class="loading-progress" style="display: none;"></div>                 <div class="position-indicator"></div>                 <div class="time-indicator-container"><div class="time-indicator">-00:25</div></div></div>
+
+        </div><!-- .small_player -->
+
+        <div class="sound_title">
+            <div class="sound_filename">
+               <a class="title" href="https://freesound.org/people/InspectorJ/sounds/402521/" title="Sleigh Bells, Long, A.wav">Sleigh Bells, Long, A.wav</a>
+            </div><!-- .sound_filename -->
+            <div class="sound_stars">
+               <ul class="star-rating">
+    <li class="current-rating" style="width:86%;">Currently /5 Stars.</li>
+    
+</ul>
+            </div><!-- .sound_stars -->
+
+            <div class="sound_description">
+                <p class="description">Raw audio of jangling sleigh bells (well, they were actually a collection of cheap, small bells bundled together, but it ...</p>
+            </div><!-- .sound_description -->
+
+            <div class="sound_tags">
+
+                <ul class="tags">
+                    
+                        <li><a href="https://freesound.org/browse/tags/Bells/">Bells</a></li>
+                    
+                        <li><a href="https://freesound.org/browse/tags/ding/">ding</a></li>
+                    
+                        <li><a href="https://freesound.org/browse/tags/ring/">ring</a></li>
+                    
+                        <li><a href="https://freesound.org/browse/tags/bells/">bells</a></li>
+                    
+                        <li><a href="https://freesound.org/browse/tags/Ring/">Ring</a></li>
+                    
+                        <li><a href="https://freesound.org/browse/tags/Jingle/">Jingle</a></li>
+                    
+                        <li><a href="https://freesound.org/browse/tags/Sleigh/">Sleigh</a></li>
+                    
+                        <li><a href="https://freesound.org/browse/tags/jingle/">jingle</a></li>
+                    
+                        <li><a href="https://freesound.org/browse/tags/jangle/">jangle</a></li>
+                    
+                        <li><a href="https://freesound.org/browse/tags/sleigh/">sleigh</a></li>
+                    
+                        <li><a href="https://freesound.org/browse/tags/Bell/">Bell</a></li>
+                    
+                        <li><a href="https://freesound.org/browse/tags/ringing/">ringing</a></li>
+                    
+                        <li><a href="https://freesound.org/browse/tags/bell/">bell</a></li>
+                    
+                        <li><a href="https://freesound.org/browse/tags/Ringing/">Ringing</a></li>
+                    
+                        <li><a href="https://freesound.org/browse/tags/Jangle/">Jangle</a></li>
+                    
+                        <li><a href="https://freesound.org/browse/tags/Ding/">Ding</a></li>
+                    
+                </ul>
+                <br style="clear: both;">
+
+            </div><!-- .sound_tags -->
+
+            <div id="bookmark_form_402521" class="bookmark_form"></div> <!-- to be filled dynamically with ajax -->
+
+            
+
+          </div><!-- .sound_title -->
+    </div><!-- .sample_player -->
+
+    <div class="sample_information ">
+        <a class="user" href="https://freesound.org/people/InspectorJ/">InspectorJ</a><br>
+        <span class="date">September 18th, 2017</span><br>
+        <span class="download_count"><a href="https://freesound.org/people/InspectorJ/sounds/402521/downloaders/">1167 downloads</a></span><br>
+        <a class="comments" href="https://freesound.org/people/InspectorJ/sounds/402521/#comments">0 comments</a>
+
+        <div class="sound_attributes">
+
+            
+
+            
+            <a class="similar" rel="nofollow" href="https://freesound.org/people/InspectorJ/sounds/402521/similar/">
+                <img src="./dinh_files/headphone--plus.png" width="16" height="16" alt="Similar" title="Similar Sounds">
+            </a>
+            
+            
+            
+            
+            <!-- license icons -->
+            
+            
+            
+                <img class="cc_license" src="./dinh_files/by.png" width="16" height="16" alt="Creative Commons Attribution license" title="This sound is licensed under the Creative Commons Attribution license.">
+            
+            
+            <!-- /license icons -->
+
+        </div><!-- .sound_attributes -->
+    </div><!-- .sample_information -->
+</div><!-- .sample_player_small -->
+
+
+
+
+
+
+                
+            
+                
+
+
+
+
+
+
+
+<div class="sample_player_small" id="412918">
+
+    
+
+    <div class="sample_player ">
+        <div class="small_player">
+            <div class="player small">
+    <div class="metadata">
+        <a class="mp3_file" href="https://freesound.org/data/previews/412/412918_5121236-lq.mp3" title="mp3 file">Church Bells, Distant, B.wav - mp3 version</a>
+<a class="ogg_file" href="https://freesound.org/data/previews/412/412918_5121236-lq.ogg" title="ogg file">Church Bells, Distant, B.wav - ogg version</a>
+<a class="waveform" href="https://freesound.org/data/displays/412/412918_5121236_wave_M.png" title="waveform file">Church Bells, Distant, B.wav - waveform</a>
+<a class="spectrum" href="https://freesound.org/data/displays/412/412918_5121236_spec_M.jpg" title="spectrogram file">Church Bells, Distant, B.wav - spectrogram</a>
+<span class="duration" title="duration in seconds">23147.6</span>
+
+    </div>
+<div class="controls">                     <a href="javascript:void(0)" title="play / pause" class="toggle play">play / pause</a>                     <a href="javascript:void(0)" title="loop" class="toggle loop">loop</a>                 </div>                 <div class="background" style="background-image: url(&quot;/data/displays/412/412918_5121236_wave_M.png&quot;); background-size: contain; background-repeat: no-repeat;"></div>                 <div class="loading-progress" style="display: none;"></div>                 <div class="position-indicator"></div>                 <div class="time-indicator-container"><div class="time-indicator">-00:23</div></div></div>
+
+        </div><!-- .small_player -->
+
+        <div class="sound_title">
+            <div class="sound_filename">
+               <a class="title" href="https://freesound.org/people/InspectorJ/sounds/412918/" title="Church Bells, Distant, B.wav">Church Bells, Distant, B...</a>
+            </div><!-- .sound_filename -->
+            <div class="sound_stars">
+               <ul class="star-rating">
+    <li class="current-rating" style="width:96%;">Currently /5 Stars.</li>
+    
+</ul>
+            </div><!-- .sound_stars -->
+
+            <div class="sound_description">
+                <p class="description">I took my "Church Bells, Close, A.wav" sound into a sampler, played multiple versions of it, added some distance via ...</p>
+            </div><!-- .sound_description -->
+
+            <div class="sound_tags">
+
+                <ul class="tags">
+                    
+                        <li><a href="https://freesound.org/browse/tags/bells/">bells</a></li>
+                    
+                        <li><a href="https://freesound.org/browse/tags/ring/">ring</a></li>
+                    
+                        <li><a href="https://freesound.org/browse/tags/Bells/">Bells</a></li>
+                    
+                        <li><a href="https://freesound.org/browse/tags/Ring/">Ring</a></li>
+                    
+                        <li><a href="https://freesound.org/browse/tags/distant/">distant</a></li>
+                    
+                        <li><a href="https://freesound.org/browse/tags/church/">church</a></li>
+                    
+                        <li><a href="https://freesound.org/browse/tags/Dong/">Dong</a></li>
+                    
+                        <li><a href="https://freesound.org/browse/tags/Distant/">Distant</a></li>
+                    
+                        <li><a href="https://freesound.org/browse/tags/dong/">dong</a></li>
+                    
+                        <li><a href="https://freesound.org/browse/tags/Bell/">Bell</a></li>
+                    
+                        <li><a href="https://freesound.org/browse/tags/ringing/">ringing</a></li>
+                    
+                        <li><a href="https://freesound.org/browse/tags/bell/">bell</a></li>
+                    
+                        <li><a href="https://freesound.org/browse/tags/church-bell/">church-bell</a></li>
+                    
+                        <li><a href="https://freesound.org/browse/tags/Ringing/">Ringing</a></li>
+                    
+                        <li><a href="https://freesound.org/browse/tags/Church/">Church</a></li>
+                    
+                        <li><a href="https://freesound.org/browse/tags/ding/">ding</a></li>
+                    
+                        <li><a href="https://freesound.org/browse/tags/Ding/">Ding</a></li>
+                    
+                </ul>
+                <br style="clear: both;">
+
+            </div><!-- .sound_tags -->
+
+            <div id="bookmark_form_412918" class="bookmark_form"></div> <!-- to be filled dynamically with ajax -->
+
+            
+
+          </div><!-- .sound_title -->
+    </div><!-- .sample_player -->
+
+    <div class="sample_information ">
+        <a class="user" href="https://freesound.org/people/InspectorJ/">InspectorJ</a><br>
+        <span class="date">December 7th, 2017</span><br>
+        <span class="download_count"><a href="https://freesound.org/people/InspectorJ/sounds/412918/downloaders/">294 downloads</a></span><br>
+        <a class="comments" href="https://freesound.org/people/InspectorJ/sounds/412918/#comments">1 comment</a>
+
+        <div class="sound_attributes">
+
+            
+
+            
+            <a class="similar" rel="nofollow" href="https://freesound.org/people/InspectorJ/sounds/412918/similar/">
+                <img src="./dinh_files/headphone--plus.png" width="16" height="16" alt="Similar" title="Similar Sounds">
+            </a>
+            
+            
+            <a class="pack" href="https://freesound.org/people/InspectorJ/packs/23452/">
+                <img src="./dinh_files/folder-open-document-music.png" width="16" height="16" alt="Pack" title="This sound belongs to the pack: Church Bells">
+            </a>
+            
+            
+            
+            <!-- license icons -->
+            
+            
+            
+                <img class="cc_license" src="./dinh_files/by.png" width="16" height="16" alt="Creative Commons Attribution license" title="This sound is licensed under the Creative Commons Attribution license.">
+            
+            
+            <!-- /license icons -->
+
+        </div><!-- .sound_attributes -->
+    </div><!-- .sample_information -->
+</div><!-- .sample_player_small -->
+
+
+
+
+
+
+                
+            
+                
+
+
+
+
+
+
+
+<div class="sample_player_small" id="411088">
+
+    
+
+    <div class="sample_player ">
+        <div class="small_player">
+            <div class="player small">
+    <div class="metadata">
+        <a class="mp3_file" href="https://freesound.org/data/previews/411/411088_5121236-lq.mp3" title="mp3 file">Bell, Candle Damper, A (H4n).wav - mp3 version</a>
+<a class="ogg_file" href="https://freesound.org/data/previews/411/411088_5121236-lq.ogg" title="ogg file">Bell, Candle Damper, A (H4n).wav - ogg version</a>
+<a class="waveform" href="https://freesound.org/data/displays/411/411088_5121236_wave_M.png" title="waveform file">Bell, Candle Damper, A (H4n).wav - waveform</a>
+<a class="spectrum" href="https://freesound.org/data/displays/411/411088_5121236_spec_M.jpg" title="spectrogram file">Bell, Candle Damper, A (H4n).wav - spectrogram</a>
+<span class="duration" title="duration in seconds">5796.28</span>
+
+    </div>
+<div class="controls">                     <a href="javascript:void(0)" title="play / pause" class="toggle play">play / pause</a>                     <a href="javascript:void(0)" title="loop" class="toggle loop">loop</a>                 </div>                 <div class="background" style="background-image: url(&quot;/data/displays/411/411088_5121236_wave_M.png&quot;); background-size: contain; background-repeat: no-repeat;"></div>                 <div class="loading-progress" style="display: none;"></div>                 <div class="position-indicator"></div>                 <div class="time-indicator-container"><div class="time-indicator">-00:05</div></div></div>
+
+        </div><!-- .small_player -->
+
+        <div class="sound_title">
+            <div class="sound_filename">
+               <a class="title" href="https://freesound.org/people/InspectorJ/sounds/411088/" title="Bell, Candle Damper, A (H4n).wav">Bell, Candle Damper, A (...</a>
+            </div><!-- .sound_filename -->
+            <div class="sound_stars">
+               <ul class="star-rating">
+    <li class="current-rating" style="width:92%;">Currently /5 Stars.</li>
+    
+</ul>
+            </div><!-- .sound_stars -->
+
+            <div class="sound_description">
+                <p class="description">Raw audio of a metal, candle damper being struck with a metal mallet. Recorded simultaneously with a Zoom H1 and ...</p>
+            </div><!-- .sound_description -->
+
+            <div class="sound_tags">
+
+                <ul class="tags">
+                    
+                        <li><a href="https://freesound.org/browse/tags/ding/">ding</a></li>
+                    
+                        <li><a href="https://freesound.org/browse/tags/Ring/">Ring</a></li>
+                    
+                        <li><a href="https://freesound.org/browse/tags/extinguish/">extinguish</a></li>
+                    
+                        <li><a href="https://freesound.org/browse/tags/candle/">candle</a></li>
+                    
+                        <li><a href="https://freesound.org/browse/tags/Candle/">Candle</a></li>
+                    
+                        <li><a href="https://freesound.org/browse/tags/Damper/">Damper</a></li>
+                    
+                        <li><a href="https://freesound.org/browse/tags/chime/">chime</a></li>
+                    
+                        <li><a href="https://freesound.org/browse/tags/Metal/">Metal</a></li>
+                    
+                        <li><a href="https://freesound.org/browse/tags/Bell/">Bell</a></li>
+                    
+                        <li><a href="https://freesound.org/browse/tags/ring/">ring</a></li>
+                    
+                        <li><a href="https://freesound.org/browse/tags/metal/">metal</a></li>
+                    
+                        <li><a href="https://freesound.org/browse/tags/damper/">damper</a></li>
+                    
+                        <li><a href="https://freesound.org/browse/tags/bell/">bell</a></li>
+                    
+                        <li><a href="https://freesound.org/browse/tags/Chime/">Chime</a></li>
+                    
+                        <li><a href="https://freesound.org/browse/tags/Extinguisher/">Extinguisher</a></li>
+                    
+                        <li><a href="https://freesound.org/browse/tags/Ding/">Ding</a></li>
+                    
+                </ul>
+                <br style="clear: both;">
+
+            </div><!-- .sound_tags -->
+
+            <div id="bookmark_form_411088" class="bookmark_form"></div> <!-- to be filled dynamically with ajax -->
+
+            
+
+          </div><!-- .sound_title -->
+    </div><!-- .sample_player -->
+
+    <div class="sample_information ">
+        <a class="user" href="https://freesound.org/people/InspectorJ/">InspectorJ</a><br>
+        <span class="date">November 17th, 2017</span><br>
+        <span class="download_count"><a href="https://freesound.org/people/InspectorJ/sounds/411088/downloaders/">2341 downloads</a></span><br>
+        <a class="comments" href="https://freesound.org/people/InspectorJ/sounds/411088/#comments">5 comments</a>
+
+        <div class="sound_attributes">
+
+            
+
+            
+            <a class="similar" rel="nofollow" href="https://freesound.org/people/InspectorJ/sounds/411088/similar/">
+                <img src="./dinh_files/headphone--plus.png" width="16" height="16" alt="Similar" title="Similar Sounds">
+            </a>
+            
+            
+            <a class="pack" href="https://freesound.org/people/InspectorJ/packs/23129/">
+                <img src="./dinh_files/folder-open-document-music.png" width="16" height="16" alt="Pack" title="This sound belongs to the pack: Recorder Comparisons">
+            </a>
+            
+            
+            
+            <!-- license icons -->
+            
+            
+            
+                <img class="cc_license" src="./dinh_files/by.png" width="16" height="16" alt="Creative Commons Attribution license" title="This sound is licensed under the Creative Commons Attribution license.">
+            
+            
+            <!-- /license icons -->
+
+        </div><!-- .sound_attributes -->
+    </div><!-- .sample_information -->
+</div><!-- .sample_player_small -->
+
+
+
+
+
+
+                
+                        <div class="sample_more_search_results"><img src="./dinh_files/plus.png" alt=""> <a href="https://freesound.org/search/?q=ding&amp;f=grouping_pack:%2223129_Recorder%20Comparisons%22%20&amp;s=%22score%20desc%22&amp;g=1&amp;advanced=&amp;a_tag=&amp;a_filename=&amp;a_description=&amp;a_packname=&amp;a_soundid=&amp;a_username=">1 more result</a> in the same pack "Recorder Comparisons"</div>
+                
+            
+                
+
+
+
+
+
+
+
+<div class="sample_player_small" id="415510">
+
+    
+
+    <div class="sample_player ">
+        <div class="small_player">
+            <div class="player small">
+    <div class="metadata">
+        <a class="mp3_file" href="https://freesound.org/data/previews/415/415510_5121236-lq.mp3" title="mp3 file">Bell, Counter, A.wav - mp3 version</a>
+<a class="ogg_file" href="https://freesound.org/data/previews/415/415510_5121236-lq.ogg" title="ogg file">Bell, Counter, A.wav - ogg version</a>
+<a class="waveform" href="https://freesound.org/data/displays/415/415510_5121236_wave_M.png" title="waveform file">Bell, Counter, A.wav - waveform</a>
+<a class="spectrum" href="https://freesound.org/data/displays/415/415510_5121236_spec_M.jpg" title="spectrogram file">Bell, Counter, A.wav - spectrogram</a>
+<span class="duration" title="duration in seconds">3707.07</span>
+
+    </div>
+<div class="controls">                     <a href="javascript:void(0)" title="play / pause" class="toggle play">play / pause</a>                     <a href="javascript:void(0)" title="loop" class="toggle loop">loop</a>                 </div>                 <div class="background" style="background-image: url(&quot;/data/displays/415/415510_5121236_wave_M.png&quot;); background-size: contain; background-repeat: no-repeat;"></div>                 <div class="loading-progress" style="display: none;"></div>                 <div class="position-indicator"></div>                 <div class="time-indicator-container"><div class="time-indicator">-00:03</div></div></div>
+
+        </div><!-- .small_player -->
+
+        <div class="sound_title">
+            <div class="sound_filename">
+               <a class="title" href="https://freesound.org/people/InspectorJ/sounds/415510/" title="Bell, Counter, A.wav">Bell, Counter, A.wav</a>
+            </div><!-- .sound_filename -->
+            <div class="sound_stars">
+               <ul class="star-rating">
+    <li class="current-rating" style="width:87%;">Currently /5 Stars.</li>
+    
+</ul>
+            </div><!-- .sound_stars -->
+
+            <div class="sound_description">
+                <p class="description">Raw audio of a counter bell being struck - the bell you would usually press to let the owner of ...</p>
+            </div><!-- .sound_description -->
+
+            <div class="sound_tags">
+
+                <ul class="tags">
+                    
+                        <li><a href="https://freesound.org/browse/tags/ring/">ring</a></li>
+                    
+                        <li><a href="https://freesound.org/browse/tags/checkout/">checkout</a></li>
+                    
+                        <li><a href="https://freesound.org/browse/tags/Ring/">Ring</a></li>
+                    
+                        <li><a href="https://freesound.org/browse/tags/Bell/">Bell</a></li>
+                    
+                        <li><a href="https://freesound.org/browse/tags/Till/">Till</a></li>
+                    
+                        <li><a href="https://freesound.org/browse/tags/counter/">counter</a></li>
+                    
+                        <li><a href="https://freesound.org/browse/tags/Checkout/">Checkout</a></li>
+                    
+                        <li><a href="https://freesound.org/browse/tags/till/">till</a></li>
+                    
+                        <li><a href="https://freesound.org/browse/tags/bell/">bell</a></li>
+                    
+                        <li><a href="https://freesound.org/browse/tags/Counter/">Counter</a></li>
+                    
+                        <li><a href="https://freesound.org/browse/tags/ding/">ding</a></li>
+                    
+                        <li><a href="https://freesound.org/browse/tags/Ding/">Ding</a></li>
+                    
+                </ul>
+                <br style="clear: both;">
+
+            </div><!-- .sound_tags -->
+
+            <div id="bookmark_form_415510" class="bookmark_form"></div> <!-- to be filled dynamically with ajax -->
+
+            
+
+          </div><!-- .sound_title -->
+    </div><!-- .sample_player -->
+
+    <div class="sample_information ">
+        <a class="user" href="https://freesound.org/people/InspectorJ/">InspectorJ</a><br>
+        <span class="date">January 16th, 2018</span><br>
+        <span class="download_count"><a href="https://freesound.org/people/InspectorJ/sounds/415510/downloaders/">3052 downloads</a></span><br>
+        <a class="comments" href="https://freesound.org/people/InspectorJ/sounds/415510/#comments">2 comments</a>
+
+        <div class="sound_attributes">
+
+            
+
+            
+            <a class="similar" rel="nofollow" href="https://freesound.org/people/InspectorJ/sounds/415510/similar/">
+                <img src="./dinh_files/headphone--plus.png" width="16" height="16" alt="Similar" title="Similar Sounds">
+            </a>
+            
+            
+            
+            
+            <!-- license icons -->
+            
+            
+            
+                <img class="cc_license" src="./dinh_files/by.png" width="16" height="16" alt="Creative Commons Attribution license" title="This sound is licensed under the Creative Commons Attribution license.">
+            
+            
+            <!-- /license icons -->
+
+        </div><!-- .sound_attributes -->
+    </div><!-- .sample_information -->
+</div><!-- .sample_player_small -->
+
+
+
+
+
+
+                
+            
+                
+
+
+
+
+
+
+
+<div class="sample_player_small" id="320905">
+
+    
+
+    <div class="sample_player ">
+        <div class="small_player">
+            <div class="player small">
+    <div class="metadata">
+        <a class="mp3_file" href="https://freesound.org/data/previews/320/320905_481768-lq.mp3" title="mp3 file">The ding - mp3 version</a>
+<a class="ogg_file" href="https://freesound.org/data/previews/320/320905_481768-lq.ogg" title="ogg file">The ding - ogg version</a>
+<a class="waveform" href="https://freesound.org/data/displays/320/320905_481768_wave_M.png" title="waveform file">The ding - waveform</a>
+<a class="spectrum" href="https://freesound.org/data/displays/320/320905_481768_spec_M.jpg" title="spectrogram file">The ding - spectrogram</a>
+<span class="duration" title="duration in seconds">1517.3</span>
+
+    </div>
+<div class="controls">                     <a href="javascript:void(0)" title="play / pause" class="toggle play">play / pause</a>                     <a href="javascript:void(0)" title="loop" class="toggle loop">loop</a>                 </div>                 <div class="background" style="background-image: url(&quot;/data/displays/320/320905_481768_wave_M.png&quot;); background-size: contain; background-repeat: no-repeat;"></div>                 <div class="loading-progress" style="display: none;"></div>                 <div class="position-indicator"></div>                 <div class="time-indicator-container"><div class="time-indicator">-00:01</div></div></div>
+
+        </div><!-- .small_player -->
+
+        <div class="sound_title">
+            <div class="sound_filename">
+               <a class="title" href="https://freesound.org/people/suzenako/sounds/320905/" title="The ding">The ding</a>
+            </div><!-- .sound_filename -->
+            <div class="sound_stars">
+               <ul class="star-rating">
+    <li class="current-rating" style="width:84%;">Currently /5 Stars.</li>
+    
+</ul>
+            </div><!-- .sound_stars -->
+
+            <div class="sound_description">
+                <p class="description">Simple <b>ding</b> with a pot of water</p>
+            </div><!-- .sound_description -->
+
+            <div class="sound_tags">
+
+                <ul class="tags">
+                    
+                        <li><a href="https://freesound.org/browse/tags/ding/">ding</a></li>
+                    
+                        <li><a href="https://freesound.org/browse/tags/gong/">gong</a></li>
+                    
+                        <li><a href="https://freesound.org/browse/tags/bell/">bell</a></li>
+                    
+                        <li><a href="https://freesound.org/browse/tags/metal/">metal</a></li>
+                    
+                        <li><a href="https://freesound.org/browse/tags/clang/">clang</a></li>
+                    
+                        <li><a href="https://freesound.org/browse/tags/water/">water</a></li>
+                    
+                </ul>
+                <br style="clear: both;">
+
+            </div><!-- .sound_tags -->
+
+            <div id="bookmark_form_320905" class="bookmark_form"></div> <!-- to be filled dynamically with ajax -->
+
+            
+
+          </div><!-- .sound_title -->
+    </div><!-- .sample_player -->
+
+    <div class="sample_information ">
+        <a class="user" href="https://freesound.org/people/suzenako/">suzenako</a><br>
+        <span class="date">August 31st, 2015</span><br>
+        <span class="download_count"><a href="https://freesound.org/people/suzenako/sounds/320905/downloaders/">5557 downloads</a></span><br>
+        <a class="comments" href="https://freesound.org/people/suzenako/sounds/320905/#comments">8 comments</a>
+
+        <div class="sound_attributes">
+
+            
+
+            
+            <a class="similar" rel="nofollow" href="https://freesound.org/people/suzenako/sounds/320905/similar/">
+                <img src="./dinh_files/headphone--plus.png" width="16" height="16" alt="Similar" title="Similar Sounds">
+            </a>
+            
+            
+            <a class="pack" href="https://freesound.org/people/suzenako/packs/17996/">
+                <img src="./dinh_files/folder-open-document-music.png" width="16" height="16" alt="Pack" title="This sound belongs to the pack: Dings">
+            </a>
+            
+            
+            
+            <!-- license icons -->
+            
+            
+            
+                <img class="cc_license" src="./dinh_files/by.png" width="16" height="16" alt="Creative Commons Attribution license" title="This sound is licensed under the Creative Commons Attribution license.">
+            
+            
+            <!-- /license icons -->
+
+        </div><!-- .sound_attributes -->
+    </div><!-- .sample_information -->
+</div><!-- .sample_player_small -->
+
+
+
+
+
+
+                
+                        <div class="sample_more_search_results"><img src="./dinh_files/plus.png" alt=""> <a href="https://freesound.org/search/?q=ding&amp;f=grouping_pack:%2217996_Dings%22%20&amp;s=%22score%20desc%22&amp;g=1&amp;advanced=&amp;a_tag=&amp;a_filename=&amp;a_description=&amp;a_packname=&amp;a_soundid=&amp;a_username=">7 more results</a> in the same pack "Dings"</div>
+                
+            
+                
+
+
+
+
+
+
+
+<div class="sample_player_small" id="334914">
+
+    
+
+    <div class="sample_player ">
+        <div class="small_player">
+            <div class="player small">
+    <div class="metadata">
+        <a class="mp3_file" href="https://freesound.org/data/previews/334/334914_321967-lq.mp3" title="mp3 file">06304 message ding 1.wav - mp3 version</a>
+<a class="ogg_file" href="https://freesound.org/data/previews/334/334914_321967-lq.ogg" title="ogg file">06304 message ding 1.wav - ogg version</a>
+<a class="waveform" href="https://freesound.org/data/displays/334/334914_321967_wave_M.png" title="waveform file">06304 message ding 1.wav - waveform</a>
+<a class="spectrum" href="https://freesound.org/data/displays/334/334914_321967_spec_M.jpg" title="spectrogram file">06304 message ding 1.wav - spectrogram</a>
+<span class="duration" title="duration in seconds">2038.46</span>
+
+    </div>
+<div class="controls">                     <a href="javascript:void(0)" title="play / pause" class="toggle play">play / pause</a>                     <a href="javascript:void(0)" title="loop" class="toggle loop">loop</a>                 </div>                 <div class="background" style="background-image: url(&quot;/data/displays/334/334914_321967_wave_M.png&quot;); background-size: contain; background-repeat: no-repeat;"></div>                 <div class="loading-progress" style="display: none;"></div>                 <div class="position-indicator"></div>                 <div class="time-indicator-container"><div class="time-indicator">-00:02</div></div></div>
+
+        </div><!-- .small_player -->
+
+        <div class="sound_title">
+            <div class="sound_filename">
+               <a class="title" href="https://freesound.org/people/Robinhood76/sounds/334914/" title="06304 message ding 1.wav">06304 message ding 1.wav</a>
+            </div><!-- .sound_filename -->
+            <div class="sound_stars">
+               <ul class="star-rating">
+    <li class="current-rating" style="width:93%;">Currently /5 Stars.</li>
+    
+</ul>
+            </div><!-- .sound_stars -->
+
+            <div class="sound_description">
+                <p class="description">Typical message <b>ding</b> for devices</p>
+            </div><!-- .sound_description -->
+
+            <div class="sound_tags">
+
+                <ul class="tags">
+                    
+                        <li><a href="https://freesound.org/browse/tags/ding/">ding</a></li>
+                    
+                        <li><a href="https://freesound.org/browse/tags/sound/">sound</a></li>
+                    
+                        <li><a href="https://freesound.org/browse/tags/incoming/">incoming</a></li>
+                    
+                        <li><a href="https://freesound.org/browse/tags/sfx/">sfx</a></li>
+                    
+                        <li><a href="https://freesound.org/browse/tags/notification/">notification</a></li>
+                    
+                        <li><a href="https://freesound.org/browse/tags/interface/">interface</a></li>
+                    
+                        <li><a href="https://freesound.org/browse/tags/message/">message</a></li>
+                    
+                </ul>
+                <br style="clear: both;">
+
+            </div><!-- .sound_tags -->
+
+            <div id="bookmark_form_334914" class="bookmark_form"></div> <!-- to be filled dynamically with ajax -->
+
+            
+
+          </div><!-- .sound_title -->
+    </div><!-- .sample_player -->
+
+    <div class="sample_information ">
+        <a class="user" href="https://freesound.org/people/Robinhood76/">Robinhood76</a><br>
+        <span class="date">February 1st, 2016</span><br>
+        <span class="download_count"><a href="https://freesound.org/people/Robinhood76/sounds/334914/downloaders/">1850 downloads</a></span><br>
+        <a class="comments" href="https://freesound.org/people/Robinhood76/sounds/334914/#comments">6 comments</a>
+
+        <div class="sound_attributes">
+
+            
+
+            
+            <a class="similar" rel="nofollow" href="https://freesound.org/people/Robinhood76/sounds/334914/similar/">
+                <img src="./dinh_files/headphone--plus.png" width="16" height="16" alt="Similar" title="Similar Sounds">
+            </a>
+            
+            
+            <a class="pack" href="https://freesound.org/people/Robinhood76/packs/11394/">
+                <img src="./dinh_files/folder-open-document-music.png" width="16" height="16" alt="Pack" title="This sound belongs to the pack: Game and Media DINGS">
+            </a>
+            
+            
+            
+            <!-- license icons -->
+            
+            
+            
+            
+                <img class="cc_license" src="./dinh_files/bync.png" height="16" alt="Creative Commons Attribution Non-Commercial license" title="This sound is licensed under the Creative Commons Attribution Non-Commercial license.">
+            
+            <!-- /license icons -->
+
+        </div><!-- .sound_attributes -->
+    </div><!-- .sample_information -->
+</div><!-- .sample_player_small -->
+
+
+
+
+
+
+                
+                        <div class="sample_more_search_results"><img src="./dinh_files/plus.png" alt=""> <a href="https://freesound.org/search/?q=ding&amp;f=grouping_pack:%2211394_Game%20and%20Media%20DINGS%22%20&amp;s=%22score%20desc%22&amp;g=1&amp;advanced=&amp;a_tag=&amp;a_filename=&amp;a_description=&amp;a_packname=&amp;a_soundid=&amp;a_username=">21 more results</a> in the same pack "Game and Media DINGS"</div>
+                
+            
+                
+
+
+
+
+
+
+
+<div class="sample_player_small" id="173932">
+
+    
+
+    <div class="sample_player ">
+        <div class="small_player">
+            <div class="player small">
+    <div class="metadata">
+        <a class="mp3_file" href="https://freesound.org/data/previews/173/173932_3229685-lq.mp3" title="mp3 file">Ding Ding Small Bell - mp3 version</a>
+<a class="ogg_file" href="https://freesound.org/data/previews/173/173932_3229685-lq.ogg" title="ogg file">Ding Ding Small Bell - ogg version</a>
+<a class="waveform" href="https://freesound.org/data/displays/173/173932_3229685_wave_M.png" title="waveform file">Ding Ding Small Bell - waveform</a>
+<a class="spectrum" href="https://freesound.org/data/displays/173/173932_3229685_spec_M.jpg" title="spectrogram file">Ding Ding Small Bell - spectrogram</a>
+<span class="duration" title="duration in seconds">14208.0</span>
+
+    </div>
+<div class="controls">                     <a href="javascript:void(0)" title="play / pause" class="toggle play">play / pause</a>                     <a href="javascript:void(0)" title="loop" class="toggle loop">loop</a>                 </div>                 <div class="background" style="background-image: url(&quot;/data/displays/173/173932_3229685_wave_M.png&quot;); background-size: contain; background-repeat: no-repeat;"></div>                 <div class="loading-progress" style="display: none;"></div>                 <div class="position-indicator"></div>                 <div class="time-indicator-container"><div class="time-indicator">-00:14</div></div></div>
+
+        </div><!-- .small_player -->
+
+        <div class="sound_title">
+            <div class="sound_filename">
+               <a class="title" href="https://freesound.org/people/JohnsonBrandEditing/sounds/173932/" title="Ding Ding Small Bell">Ding Ding Small Bell</a>
+            </div><!-- .sound_filename -->
+            <div class="sound_stars">
+               <ul class="star-rating">
+    <li class="current-rating" style="width:94%;">Currently /5 Stars.</li>
+    
+</ul>
+            </div><!-- .sound_stars -->
+
+            <div class="sound_description">
+                <p class="description"><b>ding</b> Ding Small Bell</p>
+            </div><!-- .sound_description -->
+
+            <div class="sound_tags">
+
+                <ul class="tags">
+                    
+                        <li><a href="https://freesound.org/browse/tags/Ding/">Ding</a></li>
+                    
+                        <li><a href="https://freesound.org/browse/tags/Small/">Small</a></li>
+                    
+                        <li><a href="https://freesound.org/browse/tags/Bell/">Bell</a></li>
+                    
+                        <li><a href="https://freesound.org/browse/tags/SFX/">SFX</a></li>
+                    
+                        <li><a href="https://freesound.org/browse/tags/hotel/">hotel</a></li>
+                    
+                        <li><a href="https://freesound.org/browse/tags/Ring/">Ring</a></li>
+                    
+                        <li><a href="https://freesound.org/browse/tags/Cartoon/">Cartoon</a></li>
+                    
+                </ul>
+                <br style="clear: both;">
+
+            </div><!-- .sound_tags -->
+
+            <div id="bookmark_form_173932" class="bookmark_form"></div> <!-- to be filled dynamically with ajax -->
+
+            
+
+          </div><!-- .sound_title -->
+    </div><!-- .sample_player -->
+
+    <div class="sample_information ">
+        <a class="user" href="https://freesound.org/people/JohnsonBrandEditing/">JohnsonBrandEditing</a><br>
+        <span class="date">January 12th, 2013</span><br>
+        <span class="download_count"><a href="https://freesound.org/people/JohnsonBrandEditing/sounds/173932/downloaders/">43795 downloads</a></span><br>
+        <a class="comments" href="https://freesound.org/people/JohnsonBrandEditing/sounds/173932/#comments">70 comments</a>
+
+        <div class="sound_attributes">
+
+            
+
+            
+            <a class="similar" rel="nofollow" href="https://freesound.org/people/JohnsonBrandEditing/sounds/173932/similar/">
+                <img src="./dinh_files/headphone--plus.png" width="16" height="16" alt="Similar" title="Similar Sounds">
+            </a>
+            
+            
+            
+            
+            <!-- license icons -->
+            
+            
+                <img class="cc_license" src="./dinh_files/nolaw.png" width="16" height="16" alt="Public Domain license" title="This sound is public domain.">
+            
+            
+            
+            <!-- /license icons -->
+
+        </div><!-- .sound_attributes -->
+    </div><!-- .sample_information -->
+</div><!-- .sample_player_small -->
+
+
+
+
+
+
+                
+            
+                
+
+
+
+
+
+
+
+<div class="sample_player_small" id="267330">
+
+    
+
+    <div class="sample_player ">
+        <div class="small_player">
+            <div class="player small">
+    <div class="metadata">
+        <a class="mp3_file" href="https://freesound.org/data/previews/267/267330_3112522-lq.mp3" title="mp3 file">Ding 3.wav - mp3 version</a>
+<a class="ogg_file" href="https://freesound.org/data/previews/267/267330_3112522-lq.ogg" title="ogg file">Ding 3.wav - ogg version</a>
+<a class="waveform" href="https://freesound.org/data/displays/267/267330_3112522_wave_M.png" title="waveform file">Ding 3.wav - waveform</a>
+<a class="spectrum" href="https://freesound.org/data/displays/267/267330_3112522_spec_M.jpg" title="spectrogram file">Ding 3.wav - spectrogram</a>
+<span class="duration" title="duration in seconds">8835.19</span>
+
+    </div>
+<div class="controls">                     <a href="javascript:void(0)" title="play / pause" class="toggle play">play / pause</a>                     <a href="javascript:void(0)" title="loop" class="toggle loop">loop</a>                 </div>                 <div class="background" style="background-image: url(&quot;/data/displays/267/267330_3112522_wave_M.png&quot;); background-size: contain; background-repeat: no-repeat;"></div>                 <div class="loading-progress" style="display: none;"></div>                 <div class="position-indicator"></div>                 <div class="time-indicator-container"><div class="time-indicator">-00:08</div></div></div>
+
+        </div><!-- .small_player -->
+
+        <div class="sound_title">
+            <div class="sound_filename">
+               <a class="title" href="https://freesound.org/people/gkillhour/sounds/267330/" title="Ding 3.wav">Ding 3.wav</a>
+            </div><!-- .sound_filename -->
+            <div class="sound_stars">
+               <ul class="star-rating">
+    <li class="current-rating" style="width:0%;">Currently /5 Stars.</li>
+    
+</ul>
+            </div><!-- .sound_stars -->
+
+            <div class="sound_description">
+                <p class="description">This is a bell / chime sound I hit a bowl to create this sound Recorded on a Yetti Blue ...</p>
+            </div><!-- .sound_description -->
+
+            <div class="sound_tags">
+
+                <ul class="tags">
+                    
+                        <li><a href="https://freesound.org/browse/tags/Ding/">Ding</a></li>
+                    
+                        <li><a href="https://freesound.org/browse/tags/Gong/">Gong</a></li>
+                    
+                        <li><a href="https://freesound.org/browse/tags/Bell/">Bell</a></li>
+                    
+                        <li><a href="https://freesound.org/browse/tags/Ping/">Ping</a></li>
+                    
+                        <li><a href="https://freesound.org/browse/tags/chime/">chime</a></li>
+                    
+                        <li><a href="https://freesound.org/browse/tags/Ting/">Ting</a></li>
+                    
+                        <li><a href="https://freesound.org/browse/tags/ambient/">ambient</a></li>
+                    
+                        <li><a href="https://freesound.org/browse/tags/Chime/">Chime</a></li>
+                    
+                        <li><a href="https://freesound.org/browse/tags/Ring/">Ring</a></li>
+                    
+                </ul>
+                <br style="clear: both;">
+
+            </div><!-- .sound_tags -->
+
+            <div id="bookmark_form_267330" class="bookmark_form"></div> <!-- to be filled dynamically with ajax -->
+
+            
+
+          </div><!-- .sound_title -->
+    </div><!-- .sample_player -->
+
+    <div class="sample_information ">
+        <a class="user" href="https://freesound.org/people/gkillhour/">gkillhour</a><br>
+        <span class="date">March 18th, 2015</span><br>
+        <span class="download_count"><a href="https://freesound.org/people/gkillhour/sounds/267330/downloaders/">209 downloads</a></span><br>
+        <a class="comments" href="https://freesound.org/people/gkillhour/sounds/267330/#comments">0 comments</a>
+
+        <div class="sound_attributes">
+
+            
+
+            
+            <a class="similar" rel="nofollow" href="https://freesound.org/people/gkillhour/sounds/267330/similar/">
+                <img src="./dinh_files/headphone--plus.png" width="16" height="16" alt="Similar" title="Similar Sounds">
+            </a>
+            
+            
+            <a class="pack" href="https://freesound.org/people/gkillhour/packs/16494/">
+                <img src="./dinh_files/folder-open-document-music.png" width="16" height="16" alt="Pack" title="This sound belongs to the pack: Dings">
+            </a>
+            
+            
+            
+            <!-- license icons -->
+            
+            
+            
+                <img class="cc_license" src="./dinh_files/by.png" width="16" height="16" alt="Creative Commons Attribution license" title="This sound is licensed under the Creative Commons Attribution license.">
+            
+            
+            <!-- /license icons -->
+
+        </div><!-- .sound_attributes -->
+    </div><!-- .sample_information -->
+</div><!-- .sample_player_small -->
+
+
+
+
+
+
+                
+                        <div class="sample_more_search_results"><img src="./dinh_files/plus.png" alt=""> <a href="https://freesound.org/search/?q=ding&amp;f=grouping_pack:%2216494_Dings%22%20&amp;s=%22score%20desc%22&amp;g=1&amp;advanced=&amp;a_tag=&amp;a_filename=&amp;a_description=&amp;a_packname=&amp;a_soundid=&amp;a_username=">7 more results</a> in the same pack "Dings"</div>
+                
+            
+                
+
+
+
+
+
+
+
+<div class="sample_player_small" id="361564">
+
+    
+
+    <div class="sample_player ">
+        <div class="small_player">
+            <div class="player small">
+    <div class="metadata">
+        <a class="mp3_file" href="https://freesound.org/data/previews/361/361564_6638557-lq.mp3" title="mp3 file">Ding Dong - mp3 version</a>
+<a class="ogg_file" href="https://freesound.org/data/previews/361/361564_6638557-lq.ogg" title="ogg file">Ding Dong - ogg version</a>
+<a class="waveform" href="https://freesound.org/data/displays/361/361564_6638557_wave_M.png" title="waveform file">Ding Dong - waveform</a>
+<a class="spectrum" href="https://freesound.org/data/displays/361/361564_6638557_spec_M.jpg" title="spectrogram file">Ding Dong - spectrogram</a>
+<span class="duration" title="duration in seconds">2802.61</span>
+
+    </div>
+<div class="controls">                     <a href="javascript:void(0)" title="play / pause" class="toggle play">play / pause</a>                     <a href="javascript:void(0)" title="loop" class="toggle loop">loop</a>                 </div>                 <div class="background" style="background-image: url(&quot;/data/displays/361/361564_6638557_wave_M.png&quot;); background-size: contain; background-repeat: no-repeat;"></div>                 <div class="loading-progress" style="display: none;"></div>                 <div class="position-indicator"></div>                 <div class="time-indicator-container"><div class="time-indicator">-00:02</div></div></div>
+
+        </div><!-- .small_player -->
+
+        <div class="sound_title">
+            <div class="sound_filename">
+               <a class="title" href="https://freesound.org/people/MatthewWong/sounds/361564/" title="Ding Dong">Ding Dong</a>
+            </div><!-- .sound_filename -->
+            <div class="sound_stars">
+               <ul class="star-rating">
+    <li class="current-rating" style="width:86%;">Currently /5 Stars.</li>
+    
+</ul>
+            </div><!-- .sound_stars -->
+
+            <div class="sound_description">
+                <p class="description"><b>ding</b> Dong</p>
+            </div><!-- .sound_description -->
+
+            <div class="sound_tags">
+
+                <ul class="tags">
+                    
+                        <li><a href="https://freesound.org/browse/tags/Bell/">Bell</a></li>
+                    
+                        <li><a href="https://freesound.org/browse/tags/Dong/">Dong</a></li>
+                    
+                        <li><a href="https://freesound.org/browse/tags/Ding/">Ding</a></li>
+                    
+                </ul>
+                <br style="clear: both;">
+
+            </div><!-- .sound_tags -->
+
+            <div id="bookmark_form_361564" class="bookmark_form"></div> <!-- to be filled dynamically with ajax -->
+
+            
+
+          </div><!-- .sound_title -->
+    </div><!-- .sample_player -->
+
+    <div class="sample_information ">
+        <a class="user" href="https://freesound.org/people/MatthewWong/">MatthewWong</a><br>
+        <span class="date">October 5th, 2016</span><br>
+        <span class="download_count"><a href="https://freesound.org/people/MatthewWong/sounds/361564/downloaders/">2841 downloads</a></span><br>
+        <a class="comments" href="https://freesound.org/people/MatthewWong/sounds/361564/#comments">4 comments</a>
+
+        <div class="sound_attributes">
+
+            
+
+            
+            <a class="similar" rel="nofollow" href="https://freesound.org/people/MatthewWong/sounds/361564/similar/">
+                <img src="./dinh_files/headphone--plus.png" width="16" height="16" alt="Similar" title="Similar Sounds">
+            </a>
+            
+            
+            
+            
+            <!-- license icons -->
+            
+            
+                <img class="cc_license" src="./dinh_files/nolaw.png" width="16" height="16" alt="Public Domain license" title="This sound is public domain.">
+            
+            
+            
+            <!-- /license icons -->
+
+        </div><!-- .sound_attributes -->
+    </div><!-- .sample_information -->
+</div><!-- .sample_player_small -->
+
+
+
+
+
+
+                
+            
+                
+
+
+
+
+
+
+
+<div class="sample_player_small" id="196106">
+
+    
+
+    <div class="sample_player ">
+        <div class="small_player">
+            <div class="player small">
+    <div class="metadata">
+        <a class="mp3_file" href="https://freesound.org/data/previews/196/196106_2271450-lq.mp3" title="mp3 file">Ding  - mp3 version</a>
+<a class="ogg_file" href="https://freesound.org/data/previews/196/196106_2271450-lq.ogg" title="ogg file">Ding  - ogg version</a>
+<a class="waveform" href="https://freesound.org/data/displays/196/196106_2271450_wave_M.png" title="waveform file">Ding  - waveform</a>
+<a class="spectrum" href="https://freesound.org/data/displays/196/196106_2271450_spec_M.jpg" title="spectrogram file">Ding  - spectrogram</a>
+<span class="duration" title="duration in seconds">3379.27</span>
+
+    </div>
+<div class="controls">                     <a href="javascript:void(0)" title="play / pause" class="toggle play">play / pause</a>                     <a href="javascript:void(0)" title="loop" class="toggle loop">loop</a>                 </div>                 <div class="background" style="background-image: url(&quot;/data/displays/196/196106_2271450_wave_M.png&quot;); background-size: contain; background-repeat: no-repeat;"></div>                 <div class="loading-progress" style="display: none;"></div>                 <div class="position-indicator"></div>                 <div class="time-indicator-container"><div class="time-indicator">-00:03</div></div></div>
+
+        </div><!-- .small_player -->
+
+        <div class="sound_title">
+            <div class="sound_filename">
+               <a class="title" href="https://freesound.org/people/Aiwha/sounds/196106/" title="Ding ">Ding </a>
+            </div><!-- .sound_filename -->
+            <div class="sound_stars">
+               <ul class="star-rating">
+    <li class="current-rating" style="width:92%;">Currently /5 Stars.</li>
+    
+</ul>
+            </div><!-- .sound_stars -->
+
+            <div class="sound_description">
+                <p class="description"><b>ding</b>. Clear sound of a bell. Recorded with an Alctron T 51 ST. {"fr":"Ding","desc":"Un son clair de cloche.","tags":"ding ping ting ...</p>
+            </div><!-- .sound_description -->
+
+            <div class="sound_tags">
+
+                <ul class="tags">
+                    
+                        <li><a href="https://freesound.org/browse/tags/ding/">ding</a></li>
+                    
+                        <li><a href="https://freesound.org/browse/tags/bell/">bell</a></li>
+                    
+                        <li><a href="https://freesound.org/browse/tags/clear/">clear</a></li>
+                    
+                        <li><a href="https://freesound.org/browse/tags/ping/">ping</a></li>
+                    
+                        <li><a href="https://freesound.org/browse/tags/ting/">ting</a></li>
+                    
+                        <li><a href="https://freesound.org/browse/tags/pure/">pure</a></li>
+                    
+                </ul>
+                <br style="clear: both;">
+
+            </div><!-- .sound_tags -->
+
+            <div id="bookmark_form_196106" class="bookmark_form"></div> <!-- to be filled dynamically with ajax -->
+
+            
+
+          </div><!-- .sound_title -->
+    </div><!-- .sample_player -->
+
+    <div class="sample_information ">
+        <a class="user" href="https://freesound.org/people/Aiwha/">Aiwha</a><br>
+        <span class="date">August 4th, 2013</span><br>
+        <span class="download_count"><a href="https://freesound.org/people/Aiwha/sounds/196106/downloaders/">13565 downloads</a></span><br>
+        <a class="comments" href="https://freesound.org/people/Aiwha/sounds/196106/#comments">16 comments</a>
+
+        <div class="sound_attributes">
+
+            
+
+            
+            <a class="similar" rel="nofollow" href="https://freesound.org/people/Aiwha/sounds/196106/similar/">
+                <img src="./dinh_files/headphone--plus.png" width="16" height="16" alt="Similar" title="Similar Sounds">
+            </a>
+            
+            
+            <a class="pack" href="https://freesound.org/people/Aiwha/packs/12475/">
+                <img src="./dinh_files/folder-open-document-music.png" width="16" height="16" alt="Pack" title="This sound belongs to the pack: Music">
+            </a>
+            
+            
+            
+            <!-- license icons -->
+            
+            
+            
+                <img class="cc_license" src="./dinh_files/by.png" width="16" height="16" alt="Creative Commons Attribution license" title="This sound is licensed under the Creative Commons Attribution license.">
+            
+            
+            <!-- /license icons -->
+
+        </div><!-- .sound_attributes -->
+    </div><!-- .sample_information -->
+</div><!-- .sample_player_small -->
+
+
+
+
+
+
+                
+                        <div class="sample_more_search_results"><img src="./dinh_files/plus.png" alt=""> <a href="https://freesound.org/search/?q=ding&amp;f=grouping_pack:%2212475_Music%22%20&amp;s=%22score%20desc%22&amp;g=1&amp;advanced=&amp;a_tag=&amp;a_filename=&amp;a_description=&amp;a_packname=&amp;a_soundid=&amp;a_username=">1 more result</a> in the same pack "Music"</div>
+                
+            
+                
+
+
+
+
+
+
+
+<div class="sample_player_small" id="13951">
+
+    
+
+    <div class="sample_player ">
+        <div class="small_player">
+            <div class="player small">
+    <div class="metadata">
+        <a class="mp3_file" href="https://freesound.org/data/previews/13/13951_33634-lq.mp3" title="mp3 file">23.wav - mp3 version</a>
+<a class="ogg_file" href="https://freesound.org/data/previews/13/13951_33634-lq.ogg" title="ogg file">23.wav - ogg version</a>
+<a class="waveform" href="https://freesound.org/data/displays/13/13951_33634_wave_M.png" title="waveform file">23.wav - waveform</a>
+<a class="spectrum" href="https://freesound.org/data/displays/13/13951_33634_spec_M.jpg" title="spectrogram file">23.wav - spectrogram</a>
+<span class="duration" title="duration in seconds">737.233560091</span>
+
+    </div>
+<div class="controls">                     <a href="javascript:void(0)" title="play / pause" class="toggle play">play / pause</a>                     <a href="javascript:void(0)" title="loop" class="toggle loop">loop</a>                 </div>                 <div class="background" style="background-image: url(&quot;/data/displays/13/13951_33634_wave_M.png&quot;); background-size: contain; background-repeat: no-repeat;"></div>                 <div class="loading-progress" style="display: none;"></div>                 <div class="position-indicator"></div>                 <div class="time-indicator-container"><div class="time-indicator">-00:00</div></div></div>
+
+        </div><!-- .small_player -->
+
+        <div class="sound_title">
+            <div class="sound_filename">
+               <a class="title" href="https://freesound.org/people/adcbicycle/sounds/13951/" title="23.wav">23.wav</a>
+            </div><!-- .sound_filename -->
+            <div class="sound_stars">
+               <ul class="star-rating">
+    <li class="current-rating" style="width:84%;">Currently /5 Stars.</li>
+    
+</ul>
+            </div><!-- .sound_stars -->
+
+            <div class="sound_description">
+                <p class="description">Metal object <b>ding</b></p>
+            </div><!-- .sound_description -->
+
+            <div class="sound_tags">
+
+                <ul class="tags">
+                    
+                        <li><a href="https://freesound.org/browse/tags/ding/">ding</a></li>
+                    
+                        <li><a href="https://freesound.org/browse/tags/hit/">hit</a></li>
+                    
+                        <li><a href="https://freesound.org/browse/tags/metal/">metal</a></li>
+                    
+                        <li><a href="https://freesound.org/browse/tags/ring/">ring</a></li>
+                    
+                        <li><a href="https://freesound.org/browse/tags/ting/">ting</a></li>
+                    
+                        <li><a href="https://freesound.org/browse/tags/tone/">tone</a></li>
+                    
+                </ul>
+                <br style="clear: both;">
+
+            </div><!-- .sound_tags -->
+
+            <div id="bookmark_form_13951" class="bookmark_form"></div> <!-- to be filled dynamically with ajax -->
+
+            
+
+          </div><!-- .sound_title -->
+    </div><!-- .sample_player -->
+
+    <div class="sample_information ">
+        <a class="user" href="https://freesound.org/people/adcbicycle/">adcbicycle</a><br>
+        <span class="date">January 12th, 2006</span><br>
+        <span class="download_count"><a href="https://freesound.org/people/adcbicycle/sounds/13951/downloaders/">990 downloads</a></span><br>
+        <a class="comments" href="https://freesound.org/people/adcbicycle/sounds/13951/#comments">0 comments</a>
+
+        <div class="sound_attributes">
+
+            
+
+            
+            <a class="similar" rel="nofollow" href="https://freesound.org/people/adcbicycle/sounds/13951/similar/">
+                <img src="./dinh_files/headphone--plus.png" width="16" height="16" alt="Similar" title="Similar Sounds">
+            </a>
+            
+            
+            <a class="pack" href="https://freesound.org/people/adcbicycle/packs/748/">
+                <img src="./dinh_files/folder-open-document-music.png" width="16" height="16" alt="Pack" title="This sound belongs to the pack: Ding hits">
+            </a>
+            
+            
+            
+            <!-- license icons -->
+            
+            
+                <img class="cc_license" src="./dinh_files/nolaw.png" width="16" height="16" alt="Public Domain license" title="This sound is public domain.">
+            
+            
+            
+            <!-- /license icons -->
+
+        </div><!-- .sound_attributes -->
+    </div><!-- .sample_information -->
+</div><!-- .sample_player_small -->
+
+
+
+
+
+
+                
+                        <div class="sample_more_search_results"><img src="./dinh_files/plus.png" alt=""> <a href="https://freesound.org/search/?q=ding&amp;f=grouping_pack:%22748_Ding%20hits%22%20&amp;s=%22score%20desc%22&amp;g=1&amp;advanced=&amp;a_tag=&amp;a_filename=&amp;a_description=&amp;a_packname=&amp;a_soundid=&amp;a_username=">23 more results</a> in the same pack "Ding hits"</div>
+                
+            
+                
+
+
+
+
+
+
+
+<div class="sample_player_small" id="411749">
+
+    
+
+    <div class="sample_player ">
+        <div class="small_player">
+            <div class="player small">
+    <div class="metadata">
+        <a class="mp3_file" href="https://freesound.org/data/previews/411/411749_1732887-lq.mp3" title="mp3 file">Bell Ding - mp3 version</a>
+<a class="ogg_file" href="https://freesound.org/data/previews/411/411749_1732887-lq.ogg" title="ogg file">Bell Ding - ogg version</a>
+<a class="waveform" href="https://freesound.org/data/displays/411/411749_1732887_wave_M.png" title="waveform file">Bell Ding - waveform</a>
+<a class="spectrum" href="https://freesound.org/data/displays/411/411749_1732887_spec_M.jpg" title="spectrogram file">Bell Ding - spectrogram</a>
+<span class="duration" title="duration in seconds">882.358</span>
+
+    </div>
+<div class="controls">                     <a href="javascript:void(0)" title="play / pause" class="toggle play">play / pause</a>                     <a href="javascript:void(0)" title="loop" class="toggle loop">loop</a>                 </div>                 <div class="background" style="background-image: url(&quot;/data/displays/411/411749_1732887_wave_M.png&quot;); background-size: contain; background-repeat: no-repeat;"></div>                 <div class="loading-progress" style="display: none;"></div>                 <div class="position-indicator"></div>                 <div class="time-indicator-container"><div class="time-indicator">-00:00</div></div></div>
+
+        </div><!-- .small_player -->
+
+        <div class="sound_title">
+            <div class="sound_filename">
+               <a class="title" href="https://freesound.org/people/Natty23/sounds/411749/" title="Bell Ding">Bell Ding</a>
+            </div><!-- .sound_filename -->
+            <div class="sound_stars">
+               <ul class="star-rating">
+    <li class="current-rating" style="width:100%;">Currently /5 Stars.</li>
+    
+</ul>
+            </div><!-- .sound_stars -->
+
+            <div class="sound_description">
+                <p class="description">A single bell <b>ding</b>.</p>
+            </div><!-- .sound_description -->
+
+            <div class="sound_tags">
+
+                <ul class="tags">
+                    
+                        <li><a href="https://freesound.org/browse/tags/ring/">ring</a></li>
+                    
+                        <li><a href="https://freesound.org/browse/tags/ting/">ting</a></li>
+                    
+                        <li><a href="https://freesound.org/browse/tags/metallic/">metallic</a></li>
+                    
+                        <li><a href="https://freesound.org/browse/tags/clang/">clang</a></li>
+                    
+                        <li><a href="https://freesound.org/browse/tags/metal/">metal</a></li>
+                    
+                        <li><a href="https://freesound.org/browse/tags/ping/">ping</a></li>
+                    
+                        <li><a href="https://freesound.org/browse/tags/bell/">bell</a></li>
+                    
+                        <li><a href="https://freesound.org/browse/tags/ding/">ding</a></li>
+                    
+                </ul>
+                <br style="clear: both;">
+
+            </div><!-- .sound_tags -->
+
+            <div id="bookmark_form_411749" class="bookmark_form"></div> <!-- to be filled dynamically with ajax -->
+
+            
+
+          </div><!-- .sound_title -->
+    </div><!-- .sample_player -->
+
+    <div class="sample_information ">
+        <a class="user" href="https://freesound.org/people/Natty23/">Natty23</a><br>
+        <span class="date">November 24th, 2017</span><br>
+        <span class="download_count"><a href="https://freesound.org/people/Natty23/sounds/411749/downloaders/">964 downloads</a></span><br>
+        <a class="comments" href="https://freesound.org/people/Natty23/sounds/411749/#comments">1 comment</a>
+
+        <div class="sound_attributes">
+
+            
+
+            
+            <a class="similar" rel="nofollow" href="https://freesound.org/people/Natty23/sounds/411749/similar/">
+                <img src="./dinh_files/headphone--plus.png" width="16" height="16" alt="Similar" title="Similar Sounds">
+            </a>
+            
+            
+            
+            
+            <!-- license icons -->
+            
+            
+            
+                <img class="cc_license" src="./dinh_files/by.png" width="16" height="16" alt="Creative Commons Attribution license" title="This sound is licensed under the Creative Commons Attribution license.">
+            
+            
+            <!-- /license icons -->
+
+        </div><!-- .sound_attributes -->
+    </div><!-- .sample_information -->
+</div><!-- .sample_player_small -->
+
+
+
+
+
+
+                
+            
+                
+
+
+
+
+
+
+
+<div class="sample_player_small" id="231769">
+
+    
+
+    <div class="sample_player ">
+        <div class="small_player">
+            <div class="player small">
+    <div class="metadata">
+        <a class="mp3_file" href="https://freesound.org/data/previews/231/231769_1904290-lq.mp3" title="mp3 file">Ding! - mp3 version</a>
+<a class="ogg_file" href="https://freesound.org/data/previews/231/231769_1904290-lq.ogg" title="ogg file">Ding! - ogg version</a>
+<a class="waveform" href="https://freesound.org/data/displays/231/231769_1904290_wave_M.png" title="waveform file">Ding! - waveform</a>
+<a class="spectrum" href="https://freesound.org/data/displays/231/231769_1904290_spec_M.jpg" title="spectrogram file">Ding! - spectrogram</a>
+<span class="duration" title="duration in seconds">122.766</span>
+
+    </div>
+<div class="controls">                     <a href="javascript:void(0)" title="play / pause" class="toggle play">play / pause</a>                     <a href="javascript:void(0)" title="loop" class="toggle loop">loop</a>                 </div>                 <div class="background" style="background-image: url(&quot;/data/displays/231/231769_1904290_wave_M.png&quot;); background-size: contain; background-repeat: no-repeat;"></div>                 <div class="loading-progress" style="display: none;"></div>                 <div class="position-indicator"></div>                 <div class="time-indicator-container"><div class="time-indicator">-00:00</div></div></div>
+
+        </div><!-- .small_player -->
+
+        <div class="sound_title">
+            <div class="sound_filename">
+               <a class="title" href="https://freesound.org/people/copyc4t/sounds/231769/" title="Ding!">Ding!</a>
+            </div><!-- .sound_filename -->
+            <div class="sound_stars">
+               <ul class="star-rating">
+    <li class="current-rating" style="width:60%;">Currently /5 Stars.</li>
+    
+</ul>
+            </div><!-- .sound_stars -->
+
+            <div class="sound_description">
+                <p class="description">"<b>ding</b>" sound isolated from the Alien Sci-Fi alarm loop (120 bpm), which was obtained from toiletrolltube's avatar image secure.flickr.com/photos/toiletrolltube/13334961964/</p>
+            </div><!-- .sound_description -->
+
+            <div class="sound_tags">
+
+                <ul class="tags">
+                    
+                        <li><a href="https://freesound.org/browse/tags/ding/">ding</a></li>
+                    
+                        <li><a href="https://freesound.org/browse/tags/ringing/">ringing</a></li>
+                    
+                        <li><a href="https://freesound.org/browse/tags/bell/">bell</a></li>
+                    
+                        <li><a href="https://freesound.org/browse/tags/alarm/">alarm</a></li>
+                    
+                        <li><a href="https://freesound.org/browse/tags/alert/">alert</a></li>
+                    
+                        <li><a href="https://freesound.org/browse/tags/ring/">ring</a></li>
+                    
+                        <li><a href="https://freesound.org/browse/tags/dare-26/">dare-26</a></li>
+                    
+                </ul>
+                <br style="clear: both;">
+
+            </div><!-- .sound_tags -->
+
+            <div id="bookmark_form_231769" class="bookmark_form"></div> <!-- to be filled dynamically with ajax -->
+
+            
+
+          </div><!-- .sound_title -->
+    </div><!-- .sample_player -->
+
+    <div class="sample_information ">
+        <a class="user" href="https://freesound.org/people/copyc4t/">copyc4t</a><br>
+        <span class="date">March 31st, 2014</span><br>
+        <span class="download_count"><a href="https://freesound.org/people/copyc4t/sounds/231769/downloaders/">1112 downloads</a></span><br>
+        <a class="comments" href="https://freesound.org/people/copyc4t/sounds/231769/#comments">5 comments</a>
+
+        <div class="sound_attributes">
+
+            
+
+            
+            <a class="similar" rel="nofollow" href="https://freesound.org/people/copyc4t/sounds/231769/similar/">
+                <img src="./dinh_files/headphone--plus.png" width="16" height="16" alt="Similar" title="Similar Sounds">
+            </a>
+            
+            
+            <a class="pack" href="https://freesound.org/people/copyc4t/packs/14176/">
+                <img src="./dinh_files/folder-open-document-music.png" width="16" height="16" alt="Pack" title="This sound belongs to the pack: Dare 26 assorted sounds">
+            </a>
+            
+            
+             <a class="remixes" href="https://freesound.org/people/copyc4t/sounds/231769/remixes/">
+                <img src="./dinh_files/remixes.png" width="16" height="16" alt="Remixes" title="This sound has remixes">
+            </a>
+            
+            
+            <!-- license icons -->
+            
+            
+            
+                <img class="cc_license" src="./dinh_files/by.png" width="16" height="16" alt="Creative Commons Attribution license" title="This sound is licensed under the Creative Commons Attribution license.">
+            
+            
+            <!-- /license icons -->
+
+        </div><!-- .sound_attributes -->
+    </div><!-- .sample_information -->
+</div><!-- .sample_player_small -->
+
+
+
+
+
+
+                
+                        <div class="sample_more_search_results"><img src="./dinh_files/plus.png" alt=""> <a href="https://freesound.org/search/?q=ding&amp;f=grouping_pack:%2214176_Dare%2026%20assorted%20sounds%22%20&amp;s=%22score%20desc%22&amp;g=1&amp;advanced=&amp;a_tag=&amp;a_filename=&amp;a_description=&amp;a_packname=&amp;a_soundid=&amp;a_username=">6 more results</a> in the same pack "Dare 26 assorted sounds"</div>
+                
+            
+                
+
+
+
+
+
+
+
+<div class="sample_player_small" id="333694">
+
+    
+
+    <div class="sample_player ">
+        <div class="small_player">
+            <div class="player small">
+    <div class="metadata">
+        <a class="mp3_file" href="https://freesound.org/data/previews/333/333694_1187042-lq.mp3" title="mp3 file">Thin bell ding 3 - mp3 version</a>
+<a class="ogg_file" href="https://freesound.org/data/previews/333/333694_1187042-lq.ogg" title="ogg file">Thin bell ding 3 - ogg version</a>
+<a class="waveform" href="https://freesound.org/data/displays/333/333694_1187042_wave_M.png" title="waveform file">Thin bell ding 3 - waveform</a>
+<a class="spectrum" href="https://freesound.org/data/displays/333/333694_1187042_spec_M.jpg" title="spectrogram file">Thin bell ding 3 - spectrogram</a>
+<span class="duration" title="duration in seconds">1857.6</span>
+
+    </div>
+<div class="controls">                     <a href="javascript:void(0)" title="play / pause" class="toggle play">play / pause</a>                     <a href="javascript:void(0)" title="loop" class="toggle loop">loop</a>                 </div>                 <div class="background" style="background-image: url(&quot;/data/displays/333/333694_1187042_wave_M.png&quot;); background-size: contain; background-repeat: no-repeat;"></div>                 <div class="loading-progress" style="display: none;"></div>                 <div class="position-indicator"></div>                 <div class="time-indicator-container"><div class="time-indicator">-00:01</div></div></div>
+
+        </div><!-- .small_player -->
+
+        <div class="sound_title">
+            <div class="sound_filename">
+               <a class="title" href="https://freesound.org/people/Khrinx/sounds/333694/" title="Thin bell ding 3">Thin bell ding 3</a>
+            </div><!-- .sound_filename -->
+            <div class="sound_stars">
+               <ul class="star-rating">
+    <li class="current-rating" style="width:0%;">Currently /5 Stars.</li>
+    
+</ul>
+            </div><!-- .sound_stars -->
+
+            <div class="sound_description">
+                <p class="description">A short, thin bell chiming.</p>
+            </div><!-- .sound_description -->
+
+            <div class="sound_tags">
+
+                <ul class="tags">
+                    
+                        <li><a href="https://freesound.org/browse/tags/ding/">ding</a></li>
+                    
+                        <li><a href="https://freesound.org/browse/tags/chime/">chime</a></li>
+                    
+                        <li><a href="https://freesound.org/browse/tags/short/">short</a></li>
+                    
+                        <li><a href="https://freesound.org/browse/tags/dong/">dong</a></li>
+                    
+                        <li><a href="https://freesound.org/browse/tags/bell/">bell</a></li>
+                    
+                </ul>
+                <br style="clear: both;">
+
+            </div><!-- .sound_tags -->
+
+            <div id="bookmark_form_333694" class="bookmark_form"></div> <!-- to be filled dynamically with ajax -->
+
+            
+
+          </div><!-- .sound_title -->
+    </div><!-- .sample_player -->
+
+    <div class="sample_information ">
+        <a class="user" href="https://freesound.org/people/Khrinx/">Khrinx</a><br>
+        <span class="date">January 21st, 2016</span><br>
+        <span class="download_count"><a href="https://freesound.org/people/Khrinx/sounds/333694/downloaders/">331 downloads</a></span><br>
+        <a class="comments" href="https://freesound.org/people/Khrinx/sounds/333694/#comments">0 comments</a>
+
+        <div class="sound_attributes">
+
+            
+
+            
+            <a class="similar" rel="nofollow" href="https://freesound.org/people/Khrinx/sounds/333694/similar/">
+                <img src="./dinh_files/headphone--plus.png" width="16" height="16" alt="Similar" title="Similar Sounds">
+            </a>
+            
+            
+            <a class="pack" href="https://freesound.org/people/Khrinx/packs/18838/">
+                <img src="./dinh_files/folder-open-document-music.png" width="16" height="16" alt="Pack" title="This sound belongs to the pack: Bell dings">
+            </a>
+            
+            
+            
+            <!-- license icons -->
+            
+            
+                <img class="cc_license" src="./dinh_files/nolaw.png" width="16" height="16" alt="Public Domain license" title="This sound is public domain.">
+            
+            
+            
+            <!-- /license icons -->
+
+        </div><!-- .sound_attributes -->
+    </div><!-- .sample_information -->
+</div><!-- .sample_player_small -->
+
+
+
+
+
+
+                
+                        <div class="sample_more_search_results"><img src="./dinh_files/plus.png" alt=""> <a href="https://freesound.org/search/?q=ding&amp;f=grouping_pack:%2218838_Bell%20dings%22%20&amp;s=%22score%20desc%22&amp;g=1&amp;advanced=&amp;a_tag=&amp;a_filename=&amp;a_description=&amp;a_packname=&amp;a_soundid=&amp;a_username=">3 more results</a> in the same pack "Bell dings"</div>
+                
+            
+                
+
+
+
+
+
+
+
+<div class="sample_player_small" id="66876">
+
+    
+
+    <div class="sample_player ">
+        <div class="small_player">
+            <div class="player small">
+    <div class="metadata">
+        <a class="mp3_file" href="https://freesound.org/data/previews/66/66876_874154-lq.mp3" title="mp3 file">glass_ding.mp3 - mp3 version</a>
+<a class="ogg_file" href="https://freesound.org/data/previews/66/66876_874154-lq.ogg" title="ogg file">glass_ding.mp3 - ogg version</a>
+<a class="waveform" href="https://freesound.org/data/displays/66/66876_874154_wave_M.png" title="waveform file">glass_ding.mp3 - waveform</a>
+<a class="spectrum" href="https://freesound.org/data/displays/66/66876_874154_spec_M.jpg" title="spectrogram file">glass_ding.mp3 - spectrogram</a>
+<span class="duration" title="duration in seconds">314.535</span>
+
+    </div>
+<div class="controls">                     <a href="javascript:void(0)" title="play / pause" class="toggle play">play / pause</a>                     <a href="javascript:void(0)" title="loop" class="toggle loop">loop</a>                 </div>                 <div class="background" style="background-image: url(&quot;/data/displays/66/66876_874154_wave_M.png&quot;); background-size: contain; background-repeat: no-repeat;"></div>                 <div class="loading-progress" style="display: none;"></div>                 <div class="position-indicator"></div>                 <div class="time-indicator-container"><div class="time-indicator">-00:00</div></div></div>
+
+        </div><!-- .small_player -->
+
+        <div class="sound_title">
+            <div class="sound_filename">
+               <a class="title" href="https://freesound.org/people/hihirex/sounds/66876/" title="glass_ding.mp3">glass_ding.mp3</a>
+            </div><!-- .sound_filename -->
+            <div class="sound_stars">
+               <ul class="star-rating">
+    <li class="current-rating" style="width:78%;">Currently /5 Stars.</li>
+    
+</ul>
+            </div><!-- .sound_stars -->
+
+            <div class="sound_description">
+                <p class="description">a stick hit a glass (<b>ding</b>)</p>
+            </div><!-- .sound_description -->
+
+            <div class="sound_tags">
+
+                <ul class="tags">
+                    
+                        <li><a href="https://freesound.org/browse/tags/ding/">ding</a></li>
+                    
+                        <li><a href="https://freesound.org/browse/tags/glass/">glass</a></li>
+                    
+                        <li><a href="https://freesound.org/browse/tags/onclick/">onclick</a></li>
+                    
+                </ul>
+                <br style="clear: both;">
+
+            </div><!-- .sound_tags -->
+
+            <div id="bookmark_form_66876" class="bookmark_form"></div> <!-- to be filled dynamically with ajax -->
+
+            
+
+          </div><!-- .sound_title -->
+    </div><!-- .sample_player -->
+
+    <div class="sample_information ">
+        <a class="user" href="https://freesound.org/people/hihirex/">hihirex</a><br>
+        <span class="date">February 4th, 2009</span><br>
+        <span class="download_count"><a href="https://freesound.org/people/hihirex/sounds/66876/downloaders/">1860 downloads</a></span><br>
+        <a class="comments" href="https://freesound.org/people/hihirex/sounds/66876/#comments">6 comments</a>
+
+        <div class="sound_attributes">
+
+            
+
+            
+            <a class="similar" rel="nofollow" href="https://freesound.org/people/hihirex/sounds/66876/similar/">
+                <img src="./dinh_files/headphone--plus.png" width="16" height="16" alt="Similar" title="Similar Sounds">
+            </a>
+            
+            
+            
+            
+            <!-- license icons -->
+            
+            
+                <img class="cc_license" src="./dinh_files/nolaw.png" width="16" height="16" alt="Public Domain license" title="This sound is public domain.">
+            
+            
+            
+            <!-- /license icons -->
+
+        </div><!-- .sound_attributes -->
+    </div><!-- .sample_information -->
+</div><!-- .sample_player_small -->
+
+
+
+
+
+
+                
+            
+
+            <div class="search_paginator">
+                <ul class="pagination"><li class="disabled-previous-next">previous</li><li class="next-page"><a href="https://freesound.org/search/?q=ding&amp;page=2#sound" title="Next Page">next</a></li><li class="current-page">1</li><li class="other-page"><a href="https://freesound.org/search/?q=ding&amp;page=2#sound" title="Page 2">2</a></li><li class="other-page"><a href="https://freesound.org/search/?q=ding&amp;page=3#sound" title="Page 3">3</a></li><li class="other-page"><a href="https://freesound.org/search/?q=ding&amp;page=4#sound" title="Page 4">4</a></li><li class="other-page"><a href="https://freesound.org/search/?q=ding&amp;page=5#sound" title="Page 5">5</a></li><li class="other-page"><a href="https://freesound.org/search/?q=ding&amp;page=6#sound" title="Page 6">6</a></li><li class="other-page"><a href="https://freesound.org/search/?q=ding&amp;page=7#sound" title="Page 7">7</a></li><li class="dots">...</li><li class="last-page"><a href="https://freesound.org/search/?q=ding&amp;page=38#sound" title="Last Page">38</a></li><p class="number_of_results">
+            
+                &nbsp;|&nbsp; 1278 sounds
+            
+        </p></ul>
+
+
+            </div>
+        
+
+
+    
+
+
+
+</div> <!-- END of Content area -->
+
+<br class="clear">
+
+
+
+        </div>
+        </div>
+
+    <div id="footer_wrapper">
+        <div id="footer">
+            <div id="cookie-bar">
+                <div style="float:left">
+                    <p>
+                        We use cookies to ensure you get the best experience on our website. By browsing our site you agree to our use of cookies.
+                        <br>
+                        For more information check out our <a href="https://freesound.org/help/cookies_policy">cookies policy</a>.
+                    </p>
+                </div>
+                <div style="float:right; margin-top:10px;margin-right:10px;">
+                    <button id="cookie-accept">Ok</button>
+                </div>
+                <br class="clear">
+
+            </div>
+            <div id="footer_links">
+                <a href="https://freesound.org/help/developers/">Developers</a>
+                <a href="http://blog.freesound.org/">Blog</a>
+                <a href="https://freesound.org/help/about/">About</a>
+                
+                <a href="https://freesound.org/help/tos_web/">Terms of use</a>
+            </div>
+            <div id="footer_credits">
+                Design by <a href="http://www.pixelshell.com/">Pixelshell</a>. Code by <a href="http://www.mtg.upf.edu/">MTG (UPF)</a>. Some Rights Reserved.
+            </div>
+            </div>
+        </div>
+
+        <div id="fsmodal" class="modal"></div>
+    
+
+
+</body></html>
