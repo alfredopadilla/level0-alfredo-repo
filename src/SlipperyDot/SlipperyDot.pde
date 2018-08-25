@@ -1,3 +1,5 @@
+import java.util.Random;
+
 void setup() {
   size(350, 400);
 }
@@ -10,21 +12,18 @@ int sizey = 250;
 void draw() {
   background(108, 165, 204); 
   ellipse(x, y, sizex, sizey);
+  if (mousePressed) {
+    mousePressed();
+  }
 }
 
+
 void mousePressed() {
-  //6a. create an integer variable called distance
-  //6b. use the getDistance method to initialize your varible
-  //    use the mouse's x and y and the x and y of your ellipse 
-
-  //7. print the distance variable
-
-
-  //8a. make an if statement to check if the distance variable
-  //   is greater than negative half the size of the ellipse,
-  //   and less than positive half the size of the ellipse.
-
-  //8b.  set the x and y of the ellipse to a random location on the window
+  int distance = getDistance( x, y, sizex, sizey);
+  System.out.println(distance);
+  if (distance>(-1 * (sizex/2)) && distance< (sizey/2));
+  x=new Random().nextInt(180);
+  y=new Random().nextInt(180);
 }
 
 int getDistance(int x1, int y1, int x2, int y2) {
